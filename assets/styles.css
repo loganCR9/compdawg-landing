@@ -256,9 +256,9 @@ p { text-wrap: pretty; }
   padding-block: clamp(48px, 7vw, 92px) var(--section-y);
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 5.6vw, 4.15rem);
-  letter-spacing: -0.045em;
-  max-width: 13ch;
+  font-size: clamp(2.35rem, 4.5vw, 3.6rem);
+  letter-spacing: -0.04em;
+  max-width: 16ch;
 }
 .hero h1 .accent { color: var(--orange); }
 .hero-sub { margin-top: 22px; font-size: clamp(1.08rem, 1.5vw, 1.3rem); color: var(--ink-soft); line-height: 1.5; max-width: 34rem; }
@@ -603,7 +603,7 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
    ========================================================================== */
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero h1 { max-width: 16ch; }
+  .hero h1 { max-width: 18ch; }
   .demo-grid { grid-template-columns: 1fr; }
   .cols-4 { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
