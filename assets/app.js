@@ -59,25 +59,58 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---- Placeholder demo form ---- */
-  var form = doc.querySelector('form[data-placeholder="true"]');
-  if (form) {
-    var ok = doc.getElementById("form-ok");
+  /* ---- Placeholder forms (free teardown + demo). Nothing is sent anywhere. ---- */
+  var forms = Array.prototype.slice.call(doc.querySelectorAll('form[data-placeholder="true"]'));
+  var ok = doc.getElementById("form-ok");
+  var okTitle = doc.getElementById("form-ok-title");
+  var okText = doc.getElementById("form-ok-text");
+  var tabs = Array.prototype.slice.call(doc.querySelectorAll(".form-tabs [role=tab]"));
+  var messages = {
+    free: ["Thanks, your teardown request is in.", "We'll email you when your report and free account are ready."],
+    demo: ["Thanks, we'll reply with demo times", "so keep an eye on your inbox."]
+  };
+
+  function showKind(kind) {
+    forms.forEach(function (f) { f.hidden = f.getAttribute("data-kind") !== kind; });
+    tabs.forEach(function (t) {
+      var on = t.id === "tab-" + kind;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+    });
+    if (ok) { ok.classList.remove("show"); }
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () { showKind(t.id.replace("tab-", "")); });
+  });
+  forms.forEach(function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var m = messages[form.getAttribute("data-kind")] || messages.free;
       if (ok) {
+        okTitle.textContent = m[0];
+        okText.textContent = m[1];
         ok.classList.add("show");
         ok.setAttribute("role", "status");
       }
       form.reset();
-      var btn = form.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = "Request received"; }
+      form.hidden = true;
+      var tabbar = doc.querySelector(".form-tabs");
+      if (tabbar) { tabbar.hidden = true; }
     });
+  });
+  /* Links to #demo open the demo tab, links to #free open the free teardown tab. */
+  function routeHash() {
+    if (location.hash === "#demo") { showKind("demo"); }
+    else if (location.hash === "#free") { showKind("free"); }
   }
+  doc.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#demo"], a[href="#free"]');
+    if (a) { showKind(a.getAttribute("href") === "#demo" ? "demo" : "free"); }
+  });
+  window.addEventListener("hashchange", routeHash);
+  routeHash();
 
   /* ---- FAQ: keep one open at a time (progressive enhancement) ---- */
   var faqItems = Array.prototype.slice.call(doc.querySelectorAll(".faq details"));

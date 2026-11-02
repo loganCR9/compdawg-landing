@@ -684,3 +684,14 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
 
 .watch-grid .note-card { grid-column: span 2; margin-top: 0; max-width: none; align-items: center; }
 @media (max-width: 400px) { .watch-grid .note-card { grid-column: auto; } }
+
+/* ---- Free teardown / demo tabs ---- */
+.form-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin-bottom: 22px; background: var(--cream-200); border-radius: 12px; border: 1px solid var(--line); }
+.form-tabs button { font: inherit; font-weight: 600; font-size: .95rem; min-height: 44px; border: 0; border-radius: 9px; background: transparent; color: var(--ink-soft); cursor: pointer; transition: background-color .18s, color .18s, box-shadow .18s; }
+.form-tabs button.is-active { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(15,34,56,.12), 0 0 0 1px var(--line); }
+.form-tabs button:focus-visible { outline: 2px solid var(--navy-700); outline-offset: 2px; }
+form[hidden] { display: none; }
+.anchor-offset { display: block; position: relative; top: -96px; height: 0; visibility: hidden; }
+
+#watch, #how, #plans, #free, #faq { scroll-margin-top: 40px; }
+.demo-copy h2 + .lead { margin-top: 18px; }
