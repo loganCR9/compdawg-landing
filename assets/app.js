@@ -59,14 +59,14 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---- Placeholder forms (free teardown + demo). Nothing is sent anywhere. ---- */
+  /* ---- Placeholder forms (free competitor report + demo). Nothing is sent anywhere. ---- */
   var forms = Array.prototype.slice.call(doc.querySelectorAll('form[data-placeholder="true"]'));
   var ok = doc.getElementById("form-ok");
   var okTitle = doc.getElementById("form-ok-title");
   var okText = doc.getElementById("form-ok-text");
   var tabs = Array.prototype.slice.call(doc.querySelectorAll(".form-tabs [role=tab]"));
   var messages = {
-    free: ["Thanks, your teardown request is in.", "We'll email you when your report and free account are ready."],
+    free: ["Thanks, your report request is in.", "We'll email you when your report and free account are ready."],
     demo: ["Thanks, we'll reply with demo times", "so keep an eye on your inbox."]
   };
 
@@ -100,7 +100,7 @@
       if (tabbar) { tabbar.hidden = true; }
     });
   });
-  /* Links to #demo open the demo tab, links to #free open the free teardown tab. */
+  /* Links to #demo open the demo tab, links to #free open the free competitor report tab. */
   function routeHash() {
     if (location.hash === "#demo") { showKind("demo"); }
     else if (location.hash === "#free") { showKind("free"); }
