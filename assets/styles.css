@@ -739,6 +739,15 @@ form[hidden] { display: none; }
   background: var(--cream-200);
   border-bottom: 1px solid var(--line-strong);
 }
+.compare thead .plan-descriptor {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-body);
+  font-weight: 500; font-size: .76rem; letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-soft);
+}
+.compare thead .col-dawg .plan-descriptor { color: var(--navy-900); }
 .compare tbody th[scope="row"] {
   text-align: left;
   font-family: var(--font-body);
