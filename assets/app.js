@@ -60,6 +60,7 @@
   }
 
   /* ---- Placeholder forms (free competitor report + demo). Nothing is sent anywhere. ---- */
+  var panels = Array.prototype.slice.call(doc.querySelectorAll('.form-card [data-kind]'));
   var forms = Array.prototype.slice.call(doc.querySelectorAll('form[data-placeholder="true"]'));
   var ok = doc.getElementById("form-ok");
   var okTitle = doc.getElementById("form-ok-title");
@@ -71,7 +72,7 @@
   };
 
   function showKind(kind) {
-    forms.forEach(function (f) { f.hidden = f.getAttribute("data-kind") !== kind; });
+    panels.forEach(function (f) { f.hidden = f.getAttribute("data-kind") !== kind; });
     tabs.forEach(function (t) {
       var on = t.id === "tab-" + kind;
       t.classList.toggle("is-active", on);
