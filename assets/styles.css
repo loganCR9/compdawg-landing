@@ -298,11 +298,6 @@ p { text-wrap: pretty; }
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .mock-url svg { flex: none; color: #9fb0a5; }
-.mock-flag {
-  font-size: .72rem; font-weight: 600; letter-spacing: .02em;
-  color: var(--navy-700); background: rgba(15,34,56,.06);
-  padding: 4px 9px; border-radius: 99px; white-space: nowrap;
-}
 
 .tabrail {
   display: flex; gap: 6px; padding: 12px 16px; overflow-x: auto;
@@ -396,7 +391,7 @@ p { text-wrap: pretty; }
 .ico svg { width: 22px; height: 22px; }
 
 .watch-grid { margin-top: clamp(32px, 5vw, 52px); }
-.watch-grid .card { padding: 18px 20px; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 10px; align-items: center; }
+.watch-grid .card { padding: 18px 20px; align-content: start; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 10px; align-items: center; }
 .watch-grid .ico { width: 22px; height: 22px; margin: 0; border: 0; border-radius: 0; background: none; color: var(--orange-600, #bd5a15); }
 .watch-grid .card h3 { margin: 0; }
 .watch-grid .card p { grid-column: 1 / -1; margin-top: 6px; }
@@ -444,9 +439,6 @@ p { text-wrap: pretty; }
 }
 .receives li svg { color: var(--orange-300); flex: none; }
 
-/* ---------- Feeds ---------- */
-.feeds-grid { margin-top: clamp(28px, 4vw, 44px); }
-.feeds-grid .card { background: var(--cream); }
 
 /* ==========================================================================
    Plans
@@ -772,10 +764,6 @@ form[hidden] { display: none; }
   background: var(--ink-mute); opacity: .8; margin-inline: auto;
 }
 
-.compare-note {
-  margin-top: 16px; max-width: 52rem;
-  font-size: .86rem; color: var(--ink-mute); line-height: 1.5;
-}
 .compare-cta { margin-top: 24px; }
 @media (max-width: 560px) {
   .compare-cta .btn { width: 100%; }
