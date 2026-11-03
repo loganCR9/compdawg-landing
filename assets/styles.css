@@ -443,10 +443,6 @@ p { text-wrap: pretty; }
 /* ---------- Feeds ---------- */
 .feeds-grid { margin-top: clamp(28px, 4vw, 44px); }
 .feeds-grid .card { background: var(--cream); }
-.feeds-grid .tagnum {
-  font-family: var(--font-display); color: var(--orange); font-weight: 700;
-  font-size: .95rem; letter-spacing: .02em; margin-bottom: 10px;
-}
 
 /* ==========================================================================
    Plans
@@ -465,12 +461,6 @@ p { text-wrap: pretty; }
   border: 2px solid transparent;
   box-shadow: var(--shadow-lg);
   position: relative;
-}
-.plan-badge {
-  position: absolute; top: -13px; left: 26px;
-  font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
-  color: #fff; background: var(--orange); padding: 5px 12px; border-radius: 99px;
-  box-shadow: var(--shadow-orange);
 }
 .plan h3 { font-size: 1.35rem; }
 .plan .plan-sub { margin-top: 6px; color: var(--ink-soft); font-size: .95rem; min-height: 2.7em; }
@@ -640,12 +630,6 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
 .section-head.center { margin-inline: auto; text-align: center; }
 .section-head.center .lead { margin-inline: auto; }
 
-/* Feed label ("Feed 01") used on white cards */
-.tagnum {
-  display: block; font-family: var(--font-display); color: var(--orange);
-  font-weight: 700; font-size: .95rem; letter-spacing: .01em; margin-bottom: 10px;
-}
-
 /* Bulldog mark on a cream chip, for use on navy surfaces.
    Size via the image height (not a % height in an auto-sized box). */
 .mark-chip {
@@ -678,9 +662,7 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
 :root { --ink-mute: #566579; }                 /* small secondary text on light -> >=4.5:1 */
 .btn-primary { color: var(--navy-900); }        /* navy on orange = 5.8:1 */
 .btn-primary:hover { color: var(--navy-900); }
-.plan-badge { color: var(--navy-900); }         /* navy on orange */
 .hero h1 .accent { color: #bd5a15; }            /* large display accent on cream -> >=3:1 */
-.tagnum { color: #975014; }                     /* small label -> >=4.5:1 */
 .brief .meaning .tag { color: #975014; }        /* small uppercase label -> >=4.5:1 */
 .textlink { color: #15345a; }
 
@@ -695,7 +677,7 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
 form[hidden] { display: none; }
 .anchor-offset { display: block; position: relative; top: -96px; height: 0; visibility: hidden; }
 
-#watch, #how, #compare, #plans, #strategic, #free, #faq { scroll-margin-top: 40px; }
+#watch, #how, #compare, #plans, #strategic, #free, #faq { scroll-margin-top: 84px; }
 .demo-copy h2 + .lead { margin-top: 18px; }
 
 /* ==========================================================================
@@ -780,10 +762,10 @@ form[hidden] { display: none; }
 
 /* cell marks */
 .compare .ck { color: #2f7d52; margin-inline: auto; }
-.compare .col-dawg .ck { color: var(--orange-600); }
+.compare .col-dawg .ck { color: #bd5a15; }
 .compare .dash {
   display: inline-block; width: 15px; height: 2px; border-radius: 2px;
-  background: var(--ink-mute); opacity: .55; margin-inline: auto;
+  background: var(--ink-mute); opacity: .8; margin-inline: auto;
 }
 
 .compare-note {
@@ -796,7 +778,7 @@ form[hidden] { display: none; }
 }
 
 /* X mark (not included) */
-.compare .cross { color: #b43a2a; opacity: .55; margin-inline: auto; }
+.compare .cross { color: #b43a2a; opacity: .85; margin-inline: auto; }
 
 /* ==========================================================================
    Plans comparison table (Free / Core / Strategic)
@@ -813,8 +795,8 @@ form[hidden] { display: none; }
 .compare .rowgroup {
   text-align: left;
   font-family: var(--font-display);
-  font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
-  color: #975014;
+  font-weight: 700; font-size: .95rem;
+  color: var(--ink);
   background: var(--cream-200);
   border-bottom: 1px solid var(--line-strong);
 }
