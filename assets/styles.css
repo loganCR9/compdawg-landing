@@ -695,7 +695,7 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
 form[hidden] { display: none; }
 .anchor-offset { display: block; position: relative; top: -96px; height: 0; visibility: hidden; }
 
-#watch, #how, #compare, #plans, #free, #faq { scroll-margin-top: 40px; }
+#watch, #how, #compare, #plans, #strategic, #free, #faq { scroll-margin-top: 40px; }
 .demo-copy h2 + .lead { margin-top: 18px; }
 
 /* ==========================================================================
@@ -785,3 +785,146 @@ form[hidden] { display: none; }
 @media (max-width: 560px) {
   .compare-cta .btn { width: 100%; }
 }
+
+/* X mark (not included) */
+.compare .cross { color: #b43a2a; opacity: .55; margin-inline: auto; }
+
+/* ==========================================================================
+   Plans comparison table (Free / Core / Strategic)
+   Reuses the .compare system; Core is the highlighted (col-dawg) column.
+   ========================================================================== */
+.plans-compare-head {
+  margin-top: clamp(40px, 6vw, 64px);
+  font-size: 1.3rem;
+}
+.plans-compare-wrap { margin-top: 18px; }
+.plans-compare { min-width: 600px; }
+
+/* group sub-header rows */
+.compare .rowgroup {
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase;
+  color: #975014;
+  background: var(--cream-200);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+/* CTA row */
+.plans-compare tfoot th,
+.plans-compare tfoot td {
+  background: #fff;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 0;
+  padding: 18px;
+  vertical-align: top;
+}
+.plans-compare tfoot .col-dawg { background: #fdf1e6; }
+.plan-cta-row .btn {
+  width: 100%;
+  padding: 11px 14px; min-height: 46px;
+  font-size: .9rem; line-height: 1.2; white-space: normal;
+}
+
+/* ==========================================================================
+   Strategic section
+   ========================================================================== */
+.strat-stages { margin-top: clamp(32px, 5vw, 52px); gap: 20px; }
+.strat-stage {
+  position: relative;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 28px 26px;
+}
+.strat-stage .num {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+  width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center;
+  color: #fff; background: var(--navy-800); margin-bottom: 16px;
+}
+.strat-stage h3 { font-size: 1.25rem; }
+.strat-stage-sub { margin-top: 6px; color: var(--ink-soft); font-size: .96rem; line-height: 1.5; }
+.strat-stage ul { margin-top: 18px; display: grid; gap: 11px; }
+.strat-stage li { display: flex; gap: 11px; align-items: flex-start; font-size: .95rem; color: var(--ink-soft); line-height: 1.45; }
+.strat-stage li svg { flex: none; margin-top: 3px; color: var(--orange); }
+
+.strat-subhead { margin-top: clamp(40px, 6vw, 64px); font-size: 1.3rem; }
+
+.strat-chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+.strat-chips li {
+  font-size: .9rem; color: var(--ink-soft); line-height: 1.2;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: 99px; padding: 9px 15px;
+}
+
+.strat-questions {
+  margin-top: 20px;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 36px;
+  max-width: 62rem;
+}
+.strat-questions li {
+  position: relative; padding-left: 20px;
+  color: var(--ink-soft); font-size: .98rem; line-height: 1.45;
+}
+.strat-questions li::before {
+  content: ""; position: absolute; left: 0; top: .5em;
+  width: 8px; height: 8px; border-radius: 99px; background: var(--orange);
+}
+@media (max-width: 680px) { .strat-questions { grid-template-columns: 1fr; } }
+
+.strat-grade {
+  margin-top: clamp(40px, 6vw, 64px);
+  background: var(--navy-800); color: var(--on-navy);
+  border-radius: var(--radius-lg);
+  padding: clamp(26px, 3.4vw, 38px);
+  display: grid; gap: 22px;
+}
+.strat-grade .label {
+  display: block; font-family: var(--font-display); font-weight: 700;
+  font-size: 1.2rem; letter-spacing: -0.015em; color: var(--on-navy); margin-bottom: 10px;
+}
+.strat-grade-head p { color: var(--on-navy-soft); font-size: 1rem; line-height: 1.55; max-width: 62rem; }
+.strat-grade-list { display: flex; flex-wrap: wrap; gap: 10px 12px; }
+.strat-grade-list li {
+  display: inline-flex; align-items: center;
+  font-size: .9rem; color: var(--on-navy-soft);
+  padding: 8px 14px; border-radius: 99px;
+  border: 1px solid var(--line-dark); background: rgba(255,255,255,.04);
+}
+.strat-grade-note {
+  font-size: .9rem; color: var(--on-navy-mute); line-height: 1.5;
+  padding-top: 18px; border-top: 1px solid var(--line-dark);
+}
+
+.strat-report { margin-top: 20px; display: flex; justify-content: center; }
+.strat-report-page {
+  width: 100%; max-width: 30rem;
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  padding: clamp(26px, 3vw, 36px);
+  position: relative; overflow: hidden;
+}
+.strat-report-page::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, var(--orange), var(--navy-700));
+}
+.strat-report-top { display: flex; align-items: center; gap: 10px; margin: 6px 0 20px; }
+.strat-report-dot { width: 12px; height: 12px; border-radius: 4px; background: var(--orange); flex: none; }
+.strat-report-kicker {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+  letter-spacing: -0.02em; color: var(--ink);
+}
+.strat-report-toc { counter-reset: toc; }
+.strat-report-toc li {
+  counter-increment: toc;
+  display: flex; align-items: baseline; gap: 13px;
+  padding: 13px 0; border-bottom: 1px dashed var(--line);
+  font-size: .98rem; color: var(--ink-soft);
+}
+.strat-report-toc li:last-child { border-bottom: 0; padding-bottom: 0; }
+.strat-report-toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-display); font-weight: 700; font-size: .85rem;
+  color: #975014; flex: none; min-width: 1.7em;
+}
+
+.strat-cta { margin-top: clamp(32px, 5vw, 48px); }
+@media (max-width: 560px) { .strat-cta .btn { width: 100%; } }
