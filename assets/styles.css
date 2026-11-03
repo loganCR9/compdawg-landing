@@ -396,7 +396,10 @@ p { text-wrap: pretty; }
 .ico svg { width: 22px; height: 22px; }
 
 .watch-grid { margin-top: clamp(32px, 5vw, 52px); }
-.watch-grid .card { padding: 20px; }
+.watch-grid .card { padding: 18px 20px; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 10px; align-items: center; }
+.watch-grid .ico { width: 22px; height: 22px; margin: 0; border: 0; border-radius: 0; background: none; color: var(--orange-600, #bd5a15); }
+.watch-grid .card h3 { margin: 0; }
+.watch-grid .card p { grid-column: 1 / -1; margin-top: 6px; }
 
 .note {
   margin-top: 26px;
@@ -587,7 +590,7 @@ html.js [data-reveal] {
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
-html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
+html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; will-change: auto; }
 @media (prefers-reduced-motion: reduce) {
   html.js [data-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
 }
@@ -892,8 +895,8 @@ form[hidden] { display: none; }
   position: relative; overflow: hidden;
 }
 .strat-report-page::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-  background: linear-gradient(90deg, var(--orange), var(--navy-700));
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--orange);
 }
 .strat-report-top { display: flex; align-items: center; gap: 10px; margin: 6px 0 20px; }
 .strat-report-dot { width: 12px; height: 12px; border-radius: 4px; background: var(--orange); flex: none; }
