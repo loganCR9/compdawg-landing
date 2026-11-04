@@ -853,6 +853,30 @@ form[hidden] { display: none; }
   width: 8px; height: 8px; border-radius: 99px; background: var(--orange);
 }
 @media (max-width: 680px) { .strat-questions { grid-template-columns: minmax(0, 1fr); } }
+.strat-q { display: block; color: var(--ink); font-size: .98rem; line-height: 1.45; }
+.strat-q-insight { display: block; margin-top: 3px; color: var(--ink-mute); font-size: .82rem; line-height: 1.35; }
+
+.strat-agame {
+  margin-top: 20px;
+  display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px;
+  counter-reset: agame;
+}
+.strat-agame li {
+  position: relative;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px 20px; display: flex; flex-direction: column; gap: 8px;
+}
+.strat-agame li::before {
+  counter-increment: agame; content: counter(agame);
+  font-family: var(--font-display); font-weight: 700; font-size: .82rem; color: #975014;
+}
+.strat-agame-step {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.15rem;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.strat-agame-q { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
+@media (max-width: 860px) { .strat-agame { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 520px) { .strat-agame { grid-template-columns: minmax(0,1fr); } }
 
 .strat-grade {
   margin-top: clamp(40px, 6vw, 64px);
