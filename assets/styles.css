@@ -566,7 +566,8 @@ p { text-wrap: pretty; }
 .footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .footer nav a { color: var(--on-navy-soft); font-size: .95rem; }
 .footer nav a:hover { color: var(--on-navy); }
-.footer .copy { font-size: .9rem; color: var(--on-navy-mute); width: 100%; border-top: 1px solid var(--line-dark); padding-top: 22px; }
+.footer .copy { font-size: .9rem; color: var(--on-navy-mute); width: 100%; border-top: 1px solid var(--line-dark); padding-top: 22px; padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+@media (max-width: 560px) { .footer .copy { padding-bottom: calc(44px + env(safe-area-inset-bottom)); } }
 
 /* ==========================================================================
    Scroll reveal (progressive; only active when JS on)
@@ -908,6 +909,21 @@ form[hidden] { display: none; }
   font-family: var(--font-display); font-weight: 700; font-size: .85rem;
   color: #975014; flex: none; min-width: 1.7em;
 }
+
+.strat-matrix-lead { margin-top: 14px; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; max-width: 52rem; }
+.strat-matrix {
+  margin-top: 24px; max-width: 680px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); padding: clamp(18px, 2.5vw, 28px);
+}
+.strat-matrix svg { width: 100%; height: auto; display: block; }
+.strat-matrix svg text { font-family: var(--font-body); }
+.strat-matrix .tdm-quad { font-size: 20px; font-weight: 700; letter-spacing: .04em; fill: #6b7a8d; }
+.strat-matrix .tdm-quad.tdm-top { fill: #bd5a15; }
+.strat-matrix .tdm-label { font-size: 20px; font-weight: 600; fill: #3a4b60; dominant-baseline: middle; }
+.strat-matrix .tdm-you-label { fill: #bd5a15; font-weight: 700; }
+.strat-matrix .tdm-axis { font-size: 20px; font-weight: 600; fill: var(--ink-mute); }
+.strat-matrix figcaption { margin-top: 14px; text-align: center; font-size: .86rem; color: var(--ink-mute); }
 
 .strat-cta { margin-top: clamp(32px, 5vw, 48px); }
 @media (max-width: 560px) { .strat-cta .btn { width: 100%; } }
