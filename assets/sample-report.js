@@ -33,7 +33,7 @@
   function fit() {
     if (window.matchMedia('(max-width: 680px)').matches) {
       var cs = getComputedStyle(track);
-      track.style.height = (cards[idx].offsetHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)) + 'px';
+      track.style.height = (Math.max.apply(null, cards.map(function (card) { return card.offsetHeight; })) + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)) + 'px';
     } else {
       track.style.height = '';
     }
@@ -51,7 +51,6 @@
     idx = best;
     if (nameEl) nameEl.textContent = names[idx];
     dotBtns.forEach(function (b, i) { b.setAttribute('aria-current', i === idx ? 'true' : 'false'); b.classList.toggle('sr-on', i === idx); });
-    fit();
     if (prev) prev.disabled = idx === 0;
     if (next) next.disabled = idx === cards.length - 1;
   }
@@ -64,5 +63,12 @@
     if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); }
   });
+  // Reserve the tallest slide once, so slide changes cannot move the page anchor.
+  fit();
+  if (document.fonts) document.fonts.ready.then(fit);
+  if ('ResizeObserver' in window) {
+    var sizeObserver = new ResizeObserver(fit);
+    cards.forEach(function (card) { sizeObserver.observe(card); });
+  }
   update();
 })();

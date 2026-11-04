@@ -130,7 +130,7 @@ p { text-wrap: pretty; }
 .grain::before {
   content: "";
   position: absolute; inset: 0;
-  background-image: url("noise.svg");
+  background-image: url("noise.svg?v=20261104r3");
   background-size: 180px;
   opacity: .35;
   mix-blend-mode: overlay;
@@ -190,9 +190,13 @@ p { text-wrap: pretty; }
   border-bottom-color: var(--line);
   box-shadow: 0 1px 0 rgba(15,34,56,.02), 0 8px 24px -16px rgba(15,34,56,.3);
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
 .brand { display: inline-flex; align-items: center; }
-.brand img { height: 34px; width: auto; }
+.brand img { height: 42px; width: 138px; object-fit: contain; }
+.brand { position: relative; }
+.brand .logo-light { position: absolute; inset: 0; visibility: hidden; }
+.nav.on-dark .logo-default { visibility: hidden; }
+.nav.on-dark .logo-light { visibility: visible; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links a.navlink {
   padding: 9px 13px; border-radius: 8px; color: var(--ink-soft);
@@ -219,7 +223,9 @@ p { text-wrap: pretty; }
 /* mobile sheet */
 .mobile-menu {
   display: none;
-  position: fixed; inset: 68px 0 auto 0; z-index: 49;
+  position: fixed; inset: var(--header-bottom, 73px) 0 auto 0;
+  width: 100%; max-height: calc(100dvh - var(--header-bottom, 73px));
+  overflow-y: auto; overscroll-behavior-y: contain; z-index: 49;
   background: var(--cream);
   border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
@@ -675,7 +681,7 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; filter: none; wi
 form[hidden] { display: none; }
 .anchor-offset { display: block; position: relative; top: -96px; height: 0; visibility: hidden; }
 
-#watch, #how, #compare, #plans, #strategic, #free, #faq { scroll-margin-top: 84px; }
+#watch, #how, #compare, #plans, #strategic, #free, #faq { scroll-margin-top: 88px; }
 .demo-copy h2 + .lead { margin-top: 18px; }
 
 /* ==========================================================================
@@ -1025,7 +1031,6 @@ form[hidden] { display: none; }
   font-family: var(--font-display); font-weight: 600; font-size: 17px;
   letter-spacing: -0.01em; color: var(--ink); line-height: 1.2;
 }
-.bucket-count { flex: none; font-weight: 500; font-size: 14px; color: var(--ink-mute); }
 .bucket-chev {
   flex: none; width: 20px; height: 20px; margin-left: auto;
   color: var(--navy-700); transition: transform .2s ease;
@@ -1043,4 +1048,22 @@ form[hidden] { display: none; }
   .watch-grid { display: none; }
   .strat-chips { display: none; }
   .bucket-accordion { display: block; }
+}
+
+/* Header contrast follows the band underneath its center */
+.nav.on-dark {
+  background: rgba(11,27,46,.94); border-bottom-color: var(--line-dark);
+}
+.nav.on-dark .nav-links a.navlink { color: var(--cream); }
+.nav.on-dark .nav-links a.navlink:hover { color: #fff; background: rgba(255,255,255,.12); }
+.nav .btn-primary, .mobile-menu .btn-primary { color: var(--navy-900); }
+.nav.on-dark .hamburger { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.4); }
+.nav.on-dark .hamburger span, .nav.on-dark .hamburger span::before,
+.nav.on-dark .hamburger span::after { background: var(--cream); }
+.nav.on-dark.menu-open .hamburger span { background: transparent; }
+.hamburger { position: relative; z-index: 1; cursor: pointer; }
+.menu-backdrop { position: fixed; inset: var(--header-bottom, 73px) 0 0; z-index: 48; background: rgba(8,20,35,.48); }
+.menu-backdrop[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .nav, .nav a, .hamburger span, .hamburger span::before, .hamburger span::after { transition: none; }
 }

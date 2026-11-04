@@ -11,7 +11,7 @@
 <!-- Open Graph / Twitter -->
 <meta property="og:title" content="Compdawg: competitor intelligence for leadership, checked every day">
 <meta property="og:description" content="We watch everything your competitors do every day and send leadership a concise brief on how to capitalize on it, starting with a free competitor report">
-<meta property="og:image" content="https://compdawg.com/og.png">
+<meta property="og:image" content="https://compdawg.com/og.png?v=20261104r3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Compdawg: know everything your competitors are doing and how to capitalize on it">
@@ -20,18 +20,18 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Compdawg: competitor intelligence for leadership, checked every day">
 <meta name="twitter:description" content="We watch everything your competitors do every day and send leadership a concise brief on how to capitalize on it, starting with a free competitor report">
-<meta name="twitter:image" content="https://compdawg.com/og.png">
+<meta name="twitter:image" content="https://compdawg.com/og.png?v=20261104r3">
 
-<link rel="icon" href="brand/icon-16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="brand/icon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="brand/icon-512.png" sizes="512x512" type="image/png">
-<link rel="apple-touch-icon" href="brand/icon-180.png" sizes="180x180">
+<link rel="icon" href="brand/icon-16.png?v=20261104r3" sizes="16x16" type="image/png">
+<link rel="icon" href="brand/icon-32.png?v=20261104r3" sizes="32x32" type="image/png">
+<link rel="icon" href="brand/icon-512.png?v=20261104r3" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="brand/icon-180.png?v=20261104r3" sizes="180x180">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=20261104r2">
-<link rel="stylesheet" href="assets/sample-report.css?v=20261104r2">
+<link rel="stylesheet" href="assets/styles.css?v=20261104r3">
+<link rel="stylesheet" href="assets/sample-report.css?v=20261104r3">
 </head>
 <body>
 <a class="skip-link" href="#main" style="position:absolute;left:16px;top:-60px;z-index:100;background:#0f2238;color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;transition:top .2s" onfocus="this.style.top='16px'" onblur="this.style.top='-60px'">Skip to content</a>
@@ -40,7 +40,8 @@
 <header class="nav" id="top">
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="Compdawg home">
-      <img src="brand/logo-lockup-sm.png" alt="Compdawg" width="112" height="34">
+      <img class="logo-default" src="brand/logo-lockup-sm-t.png?v=20261104r3" alt="Compdawg" width="138" height="42">
+      <img class="logo-light" src="brand/logo-lockup-light-sm.png?v=20261104r3" alt="" aria-hidden="true" width="138" height="42">
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a class="navlink" href="#watch">What we watch</a>
@@ -56,7 +57,8 @@
     <button class="hamburger" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
-<div class="mobile-menu" id="mobile-menu">
+<div class="menu-backdrop" hidden aria-hidden="true"></div>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" inert>
   <a href="#watch">What we watch</a>
   <a href="#how">How it works</a>
   <a href="#compare">Compare</a>
@@ -64,7 +66,7 @@
   <a href="#strategic">Strategic</a>
   <a href="#faq">FAQ</a>
   <a class="btn btn-primary" href="https://app.compdawg.com/signup">Sign up free</a>
-</div>
+</nav>
 
 <main id="main">
 
@@ -252,15 +254,20 @@
       </div>
       <div class="card" data-reveal style="--reveal-delay:80ms">
         <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5h17"/><path d="M6 17v-4"/><path d="M11 17V9"/><path d="M16 17v-6"/><path d="M5 8l5-4 3 3 6-4.5"/><path d="M15.5 2.5H19V6"/></svg></span>
-        <h3>SEO and AI answers</h3>
-        <p>Their organic search visibility and where AI answers cite them</p>
+        <h3>SEO</h3>
+        <p>Their organic search visibility</p>
+      </div>
+      <div class="card" data-reveal>
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+        <h3>AEO</h3>
+        <p>Where AI answers cite them</p>
       </div>
     </div>
 
     <!-- Mobile: the same sources grouped into the app's tab buckets -->
     <div class="bucket-accordion watch-accordion" aria-label="What we watch, grouped by bucket">
       <details class="bucket" name="watch" open>
-        <summary><span class="bucket-label">SiteWatch</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Webpages</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows">
           <li><span class="bucket-row-t">Website changes</span><span class="bucket-row-d">Edits to their site, captured before and after</span></li>
           <li><span class="bucket-row-t">Pricing page</span><span class="bucket-row-d">Plan and offer changes, captured before and after</span></li>
@@ -268,7 +275,7 @@
         </ul>
       </details>
       <details class="bucket" name="watch">
-        <summary><span class="bucket-label">Leadership and people</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">People</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows">
           <li><span class="bucket-row-t">Executive changes</span><span class="bucket-row-d">Changes in their leadership</span></li>
           <li><span class="bucket-row-t">New hires</span><span class="bucket-row-d">People who just joined their team</span></li>
@@ -276,7 +283,7 @@
         </ul>
       </details>
       <details class="bucket" name="watch">
-        <summary><span class="bucket-label">Ads</span><span class="bucket-count">4</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Ads</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows">
           <li><span class="bucket-row-t">Meta ads</span><span class="bucket-row-d">Ads running in the Meta ad library</span></li>
           <li><span class="bucket-row-t">LinkedIn ads</span><span class="bucket-row-d">Ads running in the LinkedIn ad library</span></li>
@@ -285,7 +292,7 @@
         </ul>
       </details>
       <details class="bucket" name="watch">
-        <summary><span class="bucket-label">Sentiment and feedback</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Feedback</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows">
           <li><span class="bucket-row-t">Reviews</span><span class="bucket-row-d">What customers write on public review sites</span></li>
           <li><span class="bucket-row-t">News</span><span class="bucket-row-d">Coverage that names them</span></li>
@@ -293,24 +300,23 @@
         </ul>
       </details>
       <details class="bucket" name="watch">
-        <summary><span class="bucket-label">SEO and AEO</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">SEO</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows">
           <li><span class="bucket-row-t">Company posts</span><span class="bucket-row-d">New posts from their blog and social channels</span></li>
           <li><span class="bucket-row-t">Search terms</span><span class="bucket-row-d">The Google search terms they rank and show up for</span></li>
-          <li><span class="bucket-row-t">SEO and AI answers</span><span class="bucket-row-d">Their organic search visibility and where AI answers cite them</span></li>
+          <li><span class="bucket-row-t">SEO</span><span class="bucket-row-d">Their organic search visibility</span></li>
         </ul>
       </details>
       <details class="bucket" name="watch">
-        <summary><span class="bucket-label">Reports</span><span class="bucket-count">2</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">AEO</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">AEO</span><span class="bucket-row-d">Where AI answers cite them</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">Filings</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows">
           <li><span class="bucket-row-t">SEC filings</span><span class="bucket-row-d">Public filings as they appear</span></li>
-          <li><span class="bucket-row-t">Leadership reports</span><span class="bucket-row-d">A daily report, a leadership digest, and a monthly summary</span></li>
-        </ul>
-      </details>
-      <details class="bucket" name="watch">
-        <summary><span class="bucket-label">Insights</span><span class="bucket-count">1</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
-        <ul class="bucket-rows">
-          <li><span class="bucket-row-t">Positioning and gaps</span><span class="bucket-row-d">Shifts in how they frame their offer and where it leaves room</span></li>
         </ul>
       </details>
     </div>
@@ -353,7 +359,7 @@
       <ul>
         <li><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Briefs on how to capitalize</li>
         <li><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>A leadership digest</li>
-        <li><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>A daily report</li>
+        <li><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Timely updates</li>
         <li><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>A monthly summary</li>
       </ul>
     </div>
@@ -784,7 +790,7 @@
     <!-- Mobile: the categories grouped into 5 buckets -->
     <div class="bucket-accordion cats-accordion" aria-label="Research categories, grouped by bucket">
       <details class="bucket" name="cats" open>
-        <summary><span class="bucket-label">Strategy and direction</span><span class="bucket-count">6</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Strategy and direction</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows bucket-chips">
           <li>Corporate strategy</li>
           <li>Future market</li>
@@ -795,7 +801,7 @@
         </ul>
       </details>
       <details class="bucket" name="cats">
-        <summary><span class="bucket-label">Market and competition</span><span class="bucket-count">5</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Market and competition</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows bucket-chips">
           <li>Competitive threats</li>
           <li>White space</li>
@@ -805,7 +811,7 @@
         </ul>
       </details>
       <details class="bucket" name="cats">
-        <summary><span class="bucket-label">Product and business</span><span class="bucket-count">5</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Product and business</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows bucket-chips">
           <li>Product portfolio</li>
           <li>Pricing and monetization</li>
@@ -815,7 +821,7 @@
         </ul>
       </details>
       <details class="bucket" name="cats">
-        <summary><span class="bucket-label">Go to market</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Go to market</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows bucket-chips">
           <li>Go to market</li>
           <li>Marketing impact</li>
@@ -823,7 +829,7 @@
         </ul>
       </details>
       <details class="bucket" name="cats">
-        <summary><span class="bucket-label">Customers and reputation</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <summary><span class="bucket-label">Customers and reputation</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
         <ul class="bucket-rows bucket-chips">
           <li>Customer retention</li>
           <li>Reputation</li>
@@ -922,7 +928,7 @@
 
     <!-- Sample Strategic report (embedded designer carousel) -->
     <h3 class="strat-subhead" data-reveal>See what a Strategic report looks like</h3>
-    <p class="strat-matrix-lead" data-reveal>Six sections written for leadership, each ending in an action</p>
+    <p class="strat-matrix-lead" data-reveal>Deeper intelligence and insights for you to drive action</p>
     <div class="sr-embed">
       <div class="sr-carousel" aria-roledescription="carousel" aria-label="Sample Strategic report">
         <div class="sr-track" id="sr-track" tabindex="0">
@@ -1163,7 +1169,7 @@
         <summary>Is the free account really free for life?
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
         </summary>
-        <p>Yes, the free plan stays free for life with no card needed, and you can move up to daily checks and briefs whenever you want more</p>
+        <p>Yes, the free plan stays free for life with no card needed, and you can move up to more timely checks and insights whenever you want</p>
       </details>
       <details>
         <summary>How often do you check?
@@ -1223,7 +1229,7 @@
   <div class="wrap">
     <div class="footer-inner">
       <div class="wordmark">
-        <span class="mark-chip"><img src="brand/logo-mark-sm.png" alt="" aria-hidden="true" width="28" height="30"></span>
+        <span class="mark-chip"><img src="brand/logo-mark-sm.png?v=20261104r3" alt="" aria-hidden="true" width="28" height="30"></span>
         <span class="wm-text">Comp<span class="d">dawg</span></span>
       </div>
       <nav aria-label="Footer">
@@ -1244,7 +1250,7 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=20261104r2" defer></script>
-<script src="assets/sample-report.js?v=20261104r2" defer></script>
+<script src="assets/app.js?v=20261104r3" defer></script>
+<script src="assets/sample-report.js?v=20261104r3" defer></script>
 </body>
 </html>

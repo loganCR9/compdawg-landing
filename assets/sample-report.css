@@ -13,7 +13,7 @@
 .sr-track {
   display: flex; gap: 20px; align-items: stretch;
   overflow-x: auto; overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  position: relative; scroll-snap-type: x mandatory; scroll-behavior: smooth;
   padding: 6px 0 22px; scroll-padding-inline: 0;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
@@ -196,7 +196,7 @@
 
 /* ---------- phone ---------- */
 @media (max-width: 680px) {
-  .sr-track { gap: 12px; padding-bottom: 20px; align-items: flex-start; overflow-y: hidden; transition: height .25s ease; }
+  .sr-track { gap: 12px; padding-bottom: 20px; align-items: flex-start; overflow-y: hidden; touch-action: pan-x pan-y; }
   .sr-card { align-self: flex-start; flex-basis: calc(100% - 36px); padding: 20px 18px 22px; min-height: 0; }
   .sr-ph { margin-bottom: 14px; gap: 10px; align-items: center; }
   .sr-ph h3 { font-size: 1.12rem; line-height: 1.2; padding-top: 0; }
