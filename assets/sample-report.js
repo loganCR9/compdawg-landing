@@ -15,7 +15,7 @@
 
   cards.forEach(function (c, i) {
     var b = document.createElement('button');
-    b.type = 'button'; b.className = 'sr-dot-btn'; b.setAttribute('role', 'tab');
+    b.type = 'button'; b.className = 'sr-dot-btn';
     b.setAttribute('aria-label', names[i]);
     b.addEventListener('click', function () { go(i); });
     dots.appendChild(b);
@@ -50,7 +50,7 @@
     if (track.scrollLeft >= max - 4) best = cards.length - 1;
     idx = best;
     if (nameEl) nameEl.textContent = names[idx];
-    dotBtns.forEach(function (b, i) { b.setAttribute('aria-selected', i === idx ? 'true' : 'false'); b.classList.toggle('sr-on', i === idx); });
+    dotBtns.forEach(function (b, i) { b.setAttribute('aria-current', i === idx ? 'true' : 'false'); b.classList.toggle('sr-on', i === idx); });
     fit();
     if (prev) prev.disabled = idx === 0;
     if (next) next.disabled = idx === cards.length - 1;

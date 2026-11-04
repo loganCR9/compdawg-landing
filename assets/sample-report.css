@@ -19,7 +19,7 @@
 }
 .sr-track::-webkit-scrollbar { display: none; }
 .sr-track:focus-visible { outline: 2px solid var(--orange); outline-offset: -4px; border-radius: var(--radius-xl); }
-@media (prefers-reduced-motion: reduce) { .sr-track { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .sr-track { scroll-behavior: auto; transition: none; } .sr-dot-btn { transition: none; } }
 .sr-track::after { content: ""; flex: 0 0 1px; margin-left: -1px; } /* keeps the end padding in Safari */
 
 .sr-card {
@@ -180,7 +180,7 @@
 .sr-ctl-left { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .sr-ctl-label { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.015em; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sr-dots { display: flex; align-items: center; justify-content: center; }
-.sr-dot-btn { border: 0; background: var(--navy-800); opacity: .22; background-clip: content-box; box-sizing: content-box; width: 10px; height: 10px; padding: 17px 4px; border-radius: 99px; transition: width .2s, opacity .2s, background-color .2s; }
+.sr-dot-btn { border: 0; background: var(--navy-800); opacity: .22; background-clip: content-box; box-sizing: content-box; width: 10px; height: 10px; padding: 17px 7px; border-radius: 99px; transition: width .2s, opacity .2s, background-color .2s; }
 .sr-dot-btn.sr-on { width: 28px; background-color: var(--orange); opacity: 1; }
 .sr-arrows { display: flex; gap: 10px; justify-content: flex-end; }
 .sr-arrow { width: 48px; height: 48px; border-radius: 99px; display: grid; place-items: center; background: #fff; border: 1px solid var(--line-strong); color: var(--ink); transition: background-color .18s, border-color .18s, color .18s; }
