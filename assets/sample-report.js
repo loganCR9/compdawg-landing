@@ -1,0 +1,68 @@
+/* Compdawg landing — embedded sample Strategic report carousel.
+   Ported from the designer's carousel-v3.js, namespaced ids/classes.
+   Keyboard, aria, and reduced-motion friendly. No external deps. */
+(function () {
+  var track = document.getElementById('sr-track');
+  if (!track) return;
+  var cards = Array.prototype.slice.call(track.querySelectorAll(':scope > .sr-card'));
+  if (!cards.length) return;
+  var dots = document.getElementById('sr-dots');
+  var nameEl = document.getElementById('sr-name');
+  var prev = document.getElementById('sr-prev');
+  var next = document.getElementById('sr-next');
+  var names = cards.map(function (c) { var h = c.querySelector('h3'); return h ? h.textContent : ''; });
+  var idx = 0;
+
+  cards.forEach(function (c, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'sr-dot-btn'; b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', names[i]);
+    b.addEventListener('click', function () { go(i); });
+    dots.appendChild(b);
+  });
+  var dotBtns = Array.prototype.slice.call(dots.children);
+
+  function reduceMotion() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+  function go(i) {
+    i = Math.max(0, Math.min(cards.length - 1, i));
+    var pad = parseFloat(getComputedStyle(track).scrollPaddingLeft || 0) || 0;
+    track.scrollTo({ left: cards[i].offsetLeft - pad, behavior: reduceMotion() ? 'auto' : 'smooth' });
+  }
+
+  function fit() {
+    if (window.matchMedia('(max-width: 680px)').matches) {
+      var cs = getComputedStyle(track);
+      track.style.height = (cards[idx].offsetHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)) + 'px';
+    } else {
+      track.style.height = '';
+    }
+  }
+
+  function update() {
+    var max = track.scrollWidth - track.clientWidth;
+    var best = 0, bestD = Infinity;
+    var pad = parseFloat(getComputedStyle(track).scrollPaddingLeft || 0) || 0;
+    cards.forEach(function (c, i) {
+      var d = Math.abs(c.offsetLeft - pad - track.scrollLeft);
+      if (d < bestD) { bestD = d; best = i; }
+    });
+    if (track.scrollLeft >= max - 4) best = cards.length - 1;
+    idx = best;
+    if (nameEl) nameEl.textContent = names[idx];
+    dotBtns.forEach(function (b, i) { b.setAttribute('aria-selected', i === idx ? 'true' : 'false'); b.classList.toggle('sr-on', i === idx); });
+    fit();
+    if (prev) prev.disabled = idx === 0;
+    if (next) next.disabled = idx === cards.length - 1;
+  }
+
+  if (prev) prev.addEventListener('click', function () { go(idx - 1); });
+  if (next) next.addEventListener('click', function () { go(idx + 1); });
+  window.addEventListener('resize', fit);
+  track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+  track.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); }
+  });
+  update();
+})();

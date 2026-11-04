@@ -31,6 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css?v=20261103r5">
+<link rel="stylesheet" href="assets/sample-report.css?v=20261103r5">
 </head>
 <body>
 <a class="skip-link" href="#main" style="position:absolute;left:16px;top:-60px;z-index:100;background:#0f2238;color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;transition:top .2s" onfocus="this.style.top='16px'" onblur="this.style.top='-60px'">Skip to content</a>
@@ -794,23 +795,187 @@
       </ul>
     </figure>
 
-    <!-- Report preview -->
-    <h3 class="strat-subhead" data-reveal>The report you receive</h3>
-    <div class="strat-report" data-reveal>
-      <div class="strat-report-page" role="img" aria-label="Contents of a Strategic report, with seven sections">
-        <div class="strat-report-top">
-          <span class="strat-report-dot" aria-hidden="true"></span>
-          <span class="strat-report-kicker">Strategic report</span>
+    <!-- Sample Strategic report (embedded designer carousel) -->
+    <h3 class="strat-subhead" data-reveal>See what a Strategic report looks like</h3>
+    <p class="strat-matrix-lead" data-reveal>Six sections written for leadership, each ending in an action</p>
+    <div class="sr-embed">
+      <div class="sr-carousel" aria-roledescription="carousel" aria-label="Sample Strategic report">
+        <div class="sr-track" id="sr-track" tabindex="0">
+
+          <!-- 1 -->
+          <article class="sr-card" aria-roledescription="slide" aria-label="Assessment of your position">
+            <div class="sr-ph"><span class="sr-pm" aria-hidden="true"></span><h3>Assessment of your position</h3><span class="sr-who">Fernhill Software</span></div>
+            <div class="sr-p1-grid">
+              <div>
+                <p class="sr-verdict">Fernhill leads on product depth and retention, and trails on distribution and AI discoverability</p>
+                <div class="sr-split" role="img" aria-label="Of 22 categories, Fernhill leads in 8, matches in 7, and trails in 7">
+                  <span class="sr-s-lead" style="flex:8">8 lead</span><span class="sr-s-match" style="flex:7">7 match</span><span class="sr-s-trail" style="flex:7">7 trail</span>
+                </div>
+                <p class="sr-split-cap">Across 22 research categories, against Quillbyte, Gadwell, and Brackenridge Cloud</p>
+              </div>
+              <dl class="sr-p1-list">
+                <div><dt><i class="sr-sw sr-sw-lead"></i>Where you lead</dt><dd>Product portfolio, customer retention, reporting depth</dd></div>
+                <div><dt><i class="sr-sw sr-sw-match"></i>Where you match</dt><dd>Brand positioning, financial strength, thought leadership</dd></div>
+                <div><dt><i class="sr-sw sr-sw-trail"></i>Where you trail</dt><dd>Go to market, pricing, digital presence, AI strategy</dd></div>
+                <div class="sr-threat"><dt>Biggest threat</dt><dd>Quillbyte, building a mid-market sales team</dd></div>
+                <div class="sr-threat sr-open"><dt>Biggest opening</dt><dd>Answer-engine visibility, where Gadwell leads and you do not appear</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="sr-card" aria-roledescription="slide" aria-label="Detailed competitor profiles">
+            <div class="sr-ph"><span class="sr-pm" aria-hidden="true"></span><h3>Detailed competitor profiles</h3></div>
+            <div class="sr-cards3">
+              <article class="sr-comp">
+                <header><h4>Quillbyte</h4></header>
+                <div class="sr-rolerow"><p class="sr-role">Mid-market challenger</p><span class="sr-threat-lvl sr-high">High threat</span></div>
+                <dl>
+                  <div><dt>Strong at</dt><dd>Fast releases, AI features</dd></div>
+                  <div><dt>Weak at</dt><dd>Support coverage, enterprise security</dd></div>
+                  <div class="sr-mv"><dt>Moving</dt><dd>14 open mid-market sales roles</dd></div>
+                </dl>
+              </article>
+              <article class="sr-comp">
+                <header><h4>Gadwell</h4></header>
+                <div class="sr-rolerow"><p class="sr-role">Enterprise incumbent</p><span class="sr-threat-lvl sr-med">Medium threat</span></div>
+                <dl>
+                  <div><dt>Strong at</dt><dd>Distribution, brand, analyst coverage</dd></div>
+                  <div><dt>Weak at</dt><dd>Release pace, rigid pricing</dd></div>
+                  <div class="sr-mv"><dt>Moving</dt><dd>Building a reseller channel</dd></div>
+                </dl>
+              </article>
+              <article class="sr-comp">
+                <header><h4>Brackenridge Cloud</h4></header>
+                <div class="sr-rolerow"><p class="sr-role">Low-price entrant</p><span class="sr-threat-lvl sr-med">Medium threat</span></div>
+                <dl>
+                  <div><dt>Strong at</dt><dd>Free tier, simple onboarding</dd></div>
+                  <div><dt>Weak at</dt><dd>Product depth, small customer base</dd></div>
+                  <div class="sr-mv"><dt>Moving</dt><dd>Free plan for teams of up to 3</dd></div>
+                </dl>
+              </article>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="sr-card" aria-roledescription="slide" aria-label="Findings across 22 research categories">
+            <div class="sr-ph"><span class="sr-pm" aria-hidden="true"></span><h3>Findings across 22 research categories</h3></div>
+            <div class="sr-finds">
+              <article class="sr-find">
+                <div class="sr-find-top"><span class="sr-cat">Go to market</span><span class="sr-grade sr-g-fact">Fact</span></div>
+                <h4>Quillbyte is staffing up to sell to your mid-market accounts</h4>
+                <p class="sr-ev"><b>Evidence</b>14 open mid-market sales roles, up from 4 two quarters earlier</p>
+                <p class="sr-act"><b>Suggested action</b>Secure top mid-market renewals before the new reps start calling</p>
+              </article>
+              <article class="sr-find">
+                <div class="sr-find-top"><span class="sr-cat">AI discoverability</span><span class="sr-grade sr-g-fact">Fact</span></div>
+                <h4>Gadwell dominates AI answers in your category, and you barely appear</h4>
+                <p class="sr-ev"><b>Evidence</b>Gadwell was named in 7 of 10 category prompts, Fernhill in 2</p>
+                <p class="sr-act"><b>Suggested action</b>Publish comparison pages for the five prompts you lost</p>
+              </article>
+              <article class="sr-find">
+                <div class="sr-find-top"><span class="sr-cat">Deals and partnerships</span><span class="sr-grade sr-g-inf">Inference</span></div>
+                <h4>Gadwell is building a reseller channel</h4>
+                <p class="sr-ev"><b>Evidence</b>6 open partnership roles and a new partner portal on its site</p>
+                <p class="sr-act"><b>Suggested action</b>Sign the two shared regional resellers before Gadwell does</p>
+              </article>
+            </div>
+            <ul class="sr-cats" aria-label="22 research categories">
+              <li>Corporate strategy</li><li>Future market</li><li>Strategic priorities</li><li>Deals and partnerships</li><li>Operational readiness</li><li>Talent and hiring</li><li>Competitive threats</li><li>White space</li><li>Brand positioning</li><li>Thought leadership</li><li>Ecosystem and integrations</li><li>Product portfolio</li><li>Pricing and monetization</li><li>AI strategy</li><li>Financial performance</li><li>Security and compliance</li><li>Go to market</li><li>Marketing impact</li><li>AI discoverability</li><li>Customer retention</li><li>Reputation</li><li>Customer experience</li>
+            </ul>
+          </article>
+
+          <!-- 4 -->
+          <article class="sr-card" aria-roledescription="slide" aria-label="Comparative analysis">
+            <div class="sr-ph"><span class="sr-pm" aria-hidden="true"></span><h3>Comparative analysis</h3></div>
+            <div class="sr-cmp" role="table" aria-label="Comparison across seven categories, scored 1 to 5">
+              <div class="sr-cmp-head" role="row">
+                <span role="columnheader">Category</span>
+                <span role="columnheader" class="sr-us">Fernhill</span>
+                <span role="columnheader">Quillbyte</span>
+                <span role="columnheader">Gadwell</span>
+                <span role="columnheader">Brackenridge</span>
+                <span role="columnheader" class="sr-vd">Your position</span>
+              </div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">Product portfolio and capabilities</span>
+                <span class="sr-c sr-us" data-s="5" data-top></span><span class="sr-c" data-s="3"></span><span class="sr-c" data-s="4"></span><span class="sr-c" data-s="2"></span><span class="sr-vd sr-v-lead">Lead</span></div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">Customer intelligence and retention</span>
+                <span class="sr-c sr-us" data-s="4" data-top></span><span class="sr-c" data-s="3"></span><span class="sr-c" data-s="4" data-top></span><span class="sr-c" data-s="2"></span><span class="sr-vd sr-v-match">Match</span></div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">Brand positioning and differentiation</span>
+                <span class="sr-c sr-us" data-s="4" data-top></span><span class="sr-c" data-s="3"></span><span class="sr-c" data-s="4" data-top></span><span class="sr-c" data-s="2"></span><span class="sr-vd sr-v-match">Match</span></div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">Business model, pricing, and monetization</span>
+                <span class="sr-c sr-us" data-s="3"></span><span class="sr-c" data-s="4"></span><span class="sr-c" data-s="2"></span><span class="sr-c" data-s="5" data-top></span><span class="sr-vd sr-v-trail">Trail</span></div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">Go to market and customer segmentation</span>
+                <span class="sr-c sr-us" data-s="2"></span><span class="sr-c" data-s="4"></span><span class="sr-c" data-s="5" data-top></span><span class="sr-c" data-s="3"></span><span class="sr-vd sr-v-trail">Trail</span></div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">Digital presence and AI era discoverability</span>
+                <span class="sr-c sr-us" data-s="2"></span><span class="sr-c" data-s="4"></span><span class="sr-c" data-s="5" data-top></span><span class="sr-c" data-s="3"></span><span class="sr-vd sr-v-trail">Trail</span></div>
+              <div class="sr-cmp-row" role="row"><span class="sr-cat" role="rowheader">AI strategy and business value</span>
+                <span class="sr-c sr-us" data-s="3"></span><span class="sr-c" data-s="5" data-top></span><span class="sr-c" data-s="2"></span><span class="sr-c" data-s="1"></span><span class="sr-vd sr-v-trail">Trail</span></div>
+            </div>
+            <p class="sr-cmp-foot">Seven of the 22 categories, scored from 1 to 5 on the same evidence for every company</p>
+          </article>
+
+          <!-- 5 -->
+          <article class="sr-card sr-dark" aria-roledescription="slide" aria-label="The Top Dawg Matrix">
+            <div class="sr-ph"><span class="sr-pm" aria-hidden="true"></span><h3>The Top Dawg Matrix</h3><span class="sr-who">Opportunities we uncover, by commercial value and ease of execution</span></div>
+            <div class="sr-mx-grid">
+              <div class="sr-mx-wrap">
+                <div class="sr-mx-y"><span>Ease of execution</span></div>
+                <div class="sr-mx">
+                  <div class="sr-q sr-q-tl"><b>Table Stakes</b><span>Match the field</span></div>
+                  <div class="sr-q sr-q-tr"><b>Top Dawg</b><span>Move first</span></div>
+                  <div class="sr-q sr-q-bl"><b>Cage It</b><span>Contain the cost</span></div>
+                  <div class="sr-q sr-q-br"><b>Big Dig</b><span>Invest with a plan</span></div>
+                  <i class="sr-dot sr-top" style="left:72%;top:24%">1</i>
+                  <i class="sr-dot sr-top" style="left:85%;top:38%">2</i>
+                  <i class="sr-dot" style="left:58%;top:62%">3</i>
+                  <i class="sr-dot" style="left:72%;top:76%">4</i>
+                  <i class="sr-dot" style="left:89%;top:60%">5</i>
+                  <i class="sr-dot" style="left:20%;top:44%">6</i>
+                  <i class="sr-dot" style="left:40%;top:30%">7</i>
+                  <i class="sr-dot" style="left:24%;top:64%">8</i>
+                </div>
+                <div class="sr-mx-x"><span>Commercial value</span></div>
+              </div>
+              <ol class="sr-mx-key">
+                <li class="sr-k-top"><i>1</i><div><b>Answer-engine comparison pages</b><span>Top Dawg</span></div></li>
+                <li class="sr-k-top"><i>2</i><div><b>Mid-market renewal program</b><span>Top Dawg</span></div></li>
+                <li><i>3</i><div><b>Usage-based starter plan</b><span>Big Dig</span></div></li>
+                <li><i>4</i><div><b>Regional reseller partnerships</b><span>Big Dig</span></div></li>
+                <li><i>5</i><div><b>Acquire a reporting tools startup</b><span>Big Dig</span></div></li>
+                <li><i>6</i><div><b>SSO and audit logs</b><span>Table Stakes</span></div></li>
+                <li><i>7</i><div><b>Standard annual contract</b><span>Table Stakes</span></div></li>
+                <li><i>8</i><div><b>Legacy mobile app</b><span>Cage It</span></div></li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="sr-card" aria-roledescription="slide" aria-label="Prioritized recommendations">
+            <div class="sr-ph"><span class="sr-pm" aria-hidden="true"></span><h3>Prioritized recommendations</h3></div>
+            <ol class="sr-recs">
+              <li><span class="sr-tg sr-t-defend">Defend</span><div class="sr-rt"><b>Secure mid-market renewals</b><span>Before Quillbyte's new sales team ramps</span></div><span class="sr-rm">Top Dawg</span><span class="sr-rw">Next 30 days</span></li>
+              <li><span class="sr-tg sr-t-build">Build</span><div class="sr-rt"><b>Publish answer-engine comparison pages</b><span>Win back the five prompts where Gadwell is named</span></div><span class="sr-rm">Top Dawg</span><span class="sr-rw">Next 60 days</span></li>
+              <li><span class="sr-tg sr-t-improve">Improve</span><div class="sr-rt"><b>Launch a usage-based starter plan</b><span>Answer Brackenridge Cloud's free plan</span></div><span class="sr-rm">Big Dig</span><span class="sr-rw">This quarter</span></li>
+              <li><span class="sr-tg sr-t-partner">Partner</span><div class="sr-rt"><b>Sign the two shared regional resellers</b><span>Take the channel before Gadwell builds it</span></div><span class="sr-rm">Big Dig</span><span class="sr-rw">This quarter</span></li>
+              <li><span class="sr-tg sr-t-buy">Buy</span><div class="sr-rt"><b>Acquire a reporting tools startup</b><span>Close the analytics gap that Quillbyte is exploiting</span></div><span class="sr-rm">Big Dig</span><span class="sr-rw">Within 12 months</span></li>
+              <li><span class="sr-tg sr-t-exit">Exit</span><div class="sr-rt"><b>Retire the legacy mobile app</b><span>Free two engineers for the work above</span></div><span class="sr-rm">Cage It</span><span class="sr-rw">Within 6 months</span></li>
+            </ol>
+          </article>
         </div>
-        <ol class="strat-report-toc">
-          <li>Executive assessment of your position</li>
-          <li>Customer and competitor profiles</li>
-          <li>Comparative analysis across 20+ categories</li>
-          <li>Relative strengths and weaknesses</li>
-          <li>Competitive threats and market opportunities</li>
-          <li>Prioritized strategic recommendations</li>
-          <li>Execution roadmap and ongoing monitoring</li>
-        </ol>
+
+        <div class="sr-controls-wrap">
+          <div class="sr-controls">
+            <div class="sr-ctl-left">
+              <span class="sr-ctl-label" id="sr-name" aria-live="polite">Assessment of your position</span>
+            </div>
+            <div class="sr-dots" id="sr-dots" role="tablist" aria-label="Choose a section"></div>
+            <div class="sr-arrows">
+              <button type="button" class="sr-arrow" id="sr-prev" aria-label="Previous section"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <button type="button" class="sr-arrow" id="sr-next" aria-label="Next section"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -954,5 +1119,6 @@
 </footer>
 
 <script src="assets/app.js?v=20261103r5" defer></script>
+<script src="assets/sample-report.js?v=20261103r5" defer></script>
 </body>
 </html>
