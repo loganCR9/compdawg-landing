@@ -832,11 +832,25 @@ form[hidden] { display: none; }
 
 .strat-subhead { margin-top: clamp(40px, 6vw, 64px); font-size: 1.3rem; }
 
-.strat-chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+/* Desktop: centered, ordered pill grid (3 cols >=1024, 2 cols 768-1023) */
+.strat-subhead.center { text-align: center; }
+.strat-chips {
+  margin: 20px auto 0;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 12px; max-width: 960px;
+}
 .strat-chips li {
-  font-size: .9rem; color: var(--ink-soft); line-height: 1.2;
+  flex: 0 0 calc((100% - 24px) / 3);
+  min-height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  font-size: .9rem; color: var(--ink-soft); line-height: 1.25;
   background: #fff; border: 1px solid var(--line);
-  border-radius: 99px; padding: 9px 15px;
+  border-radius: 99px; padding: 10px 16px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .strat-chips { max-width: 640px; }
+  .strat-chips li { flex: 0 0 calc((100% - 12px) / 2); }
 }
 
 .strat-questions {
@@ -964,4 +978,69 @@ form[hidden] { display: none; }
 /* buttons wrap their label on phones instead of pushing the page wider */
 @media (max-width: 560px) {
   .btn { white-space: normal; text-align: center; max-width: 100%; }
+}
+
+/* ==========================================================================
+   Section CTA bands (between sections, and inside Strategic)
+   ========================================================================== */
+.section-cta {
+  margin-top: clamp(32px, 5vw, 52px);
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+  text-align: center;
+}
+.section-cta p {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem); letter-spacing: -0.02em;
+  line-height: 1.1; color: var(--ink); max-width: 24ch;
+}
+.strat-cta { margin-top: clamp(32px, 5vw, 48px); }
+@media (max-width: 560px) { .section-cta .btn { width: 100%; } }
+
+/* ==========================================================================
+   Mobile bucket accordions (watch sources + strategic categories)
+   Hidden on desktop; the desktop grids stay the single source of truth there.
+   Native <details name> gives exclusive open and works with no JS.
+   ========================================================================== */
+.bucket-accordion { display: none; margin-top: clamp(28px, 5vw, 44px); }
+
+.bucket {
+  background: #fff; border: 1px solid var(--line-strong);
+  border-radius: 14px; margin-bottom: 8px;
+}
+.bucket:last-child { margin-bottom: 0; }
+.bucket[open] { border-color: var(--orange); }
+.bucket > summary {
+  list-style: none; cursor: pointer;
+  min-height: 56px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+}
+.bucket > summary::-webkit-details-marker { display: none; }
+.bucket > summary:hover { background: var(--cream); }
+.bucket > summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.bucket > summary:active { background: rgba(15,34,56,.04); }
+.bucket[open] > summary { border-bottom: 1px solid var(--line); }
+.bucket-label {
+  min-width: 0;
+  font-family: var(--font-display); font-weight: 600; font-size: 17px;
+  letter-spacing: -0.01em; color: var(--ink); line-height: 1.2;
+}
+.bucket-count { flex: none; font-weight: 500; font-size: 14px; color: var(--ink-mute); }
+.bucket-chev {
+  flex: none; width: 20px; height: 20px; margin-left: auto;
+  color: var(--navy-700); transition: transform .2s ease;
+}
+.bucket[open] > summary .bucket-chev { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) { .bucket-chev { transition: none; } }
+
+.bucket-rows li { padding: 12px 16px; border-top: 1px solid var(--line); }
+.bucket-rows li:first-child { border-top: 0; }
+.bucket-row-t { display: block; font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.bucket-row-d { display: block; margin-top: 2px; font-size: 14px; color: var(--ink-soft); line-height: 1.4; }
+.bucket-chips li { font-size: 16px; font-weight: 600; color: var(--ink); }
+
+@media (max-width: 767px) {
+  .watch-grid { display: none; }
+  .strat-chips { display: none; }
+  .bucket-accordion { display: block; }
 }

@@ -30,8 +30,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=20261103r5">
-<link rel="stylesheet" href="assets/sample-report.css?v=20261103r5">
+<link rel="stylesheet" href="assets/styles.css?v=20261103r6">
+<link rel="stylesheet" href="assets/sample-report.css?v=20261103r6">
 </head>
 <body>
 <a class="skip-link" href="#main" style="position:absolute;left:16px;top:-60px;z-index:100;background:#0f2238;color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;transition:top .2s" onfocus="this.style.top='16px'" onblur="this.style.top='-60px'">Skip to content</a>
@@ -256,6 +256,69 @@
         <p>Their organic search visibility and where AI answers cite them</p>
       </div>
     </div>
+
+    <!-- Mobile: the same sources grouped into the app's tab buckets -->
+    <div class="bucket-accordion watch-accordion" aria-label="What we watch, grouped by bucket">
+      <details class="bucket" name="watch" open>
+        <summary><span class="bucket-label">SiteWatch</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">Website changes</span><span class="bucket-row-d">Edits to their site, captured before and after</span></li>
+          <li><span class="bucket-row-t">Pricing page</span><span class="bucket-row-d">Plan and offer changes, captured before and after</span></li>
+          <li><span class="bucket-row-t">Product launches</span><span class="bucket-row-d">New products and features as they ship</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">Leadership and people</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">Executive changes</span><span class="bucket-row-d">Changes in their leadership</span></li>
+          <li><span class="bucket-row-t">New hires</span><span class="bucket-row-d">People who just joined their team</span></li>
+          <li><span class="bucket-row-t">Job postings</span><span class="bucket-row-d">New roles on their public job boards</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">Ads</span><span class="bucket-count">4</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">Meta ads</span><span class="bucket-row-d">Ads running in the Meta ad library</span></li>
+          <li><span class="bucket-row-t">LinkedIn ads</span><span class="bucket-row-d">Ads running in the LinkedIn ad library</span></li>
+          <li><span class="bucket-row-t">Google ads</span><span class="bucket-row-d">The ads they run on Google search and display</span></li>
+          <li><span class="bucket-row-t">Bing ads</span><span class="bucket-row-d">The ads they run on Microsoft Advertising</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">Sentiment and feedback</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">Reviews</span><span class="bucket-row-d">What customers write on public review sites</span></li>
+          <li><span class="bucket-row-t">News</span><span class="bucket-row-d">Coverage that names them</span></li>
+          <li><span class="bucket-row-t">Sentiment</span><span class="bucket-row-d">How customers and the market feel about them, from reviews and social posts</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">SEO and AEO</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">Company posts</span><span class="bucket-row-d">New posts from their blog and social channels</span></li>
+          <li><span class="bucket-row-t">Search terms</span><span class="bucket-row-d">The Google search terms they rank and show up for</span></li>
+          <li><span class="bucket-row-t">SEO and AI answers</span><span class="bucket-row-d">Their organic search visibility and where AI answers cite them</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">Reports</span><span class="bucket-count">2</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">SEC filings</span><span class="bucket-row-d">Public filings as they appear</span></li>
+          <li><span class="bucket-row-t">Leadership reports</span><span class="bucket-row-d">A daily report, a leadership digest, and a monthly summary</span></li>
+        </ul>
+      </details>
+      <details class="bucket" name="watch">
+        <summary><span class="bucket-label">Insights</span><span class="bucket-count">1</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows">
+          <li><span class="bucket-row-t">Positioning and gaps</span><span class="bucket-row-d">Shifts in how they frame their offer and where it leaves room</span></li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="section-cta" data-reveal>
+      <p>See every competitor move in one place</p>
+      <a class="btn btn-primary" href="https://app.compdawg.com/signup">Sign up free</a>
+    </div>
   </div>
 </section>
 
@@ -430,7 +493,8 @@
       </table>
     </div>
 
-        <div class="compare-cta" data-reveal>
+    <div class="section-cta" data-reveal>
+      <p>Start free and see how you stack up</p>
       <a class="btn btn-primary" href="https://app.compdawg.com/signup">Sign up free</a>
     </div>
   </div>
@@ -620,6 +684,11 @@
         </tfoot>
       </table>
     </div>
+
+    <div class="section-cta" data-reveal>
+      <p>Start free today, upgrade when you want more</p>
+      <a class="btn btn-primary" href="https://app.compdawg.com/signup">Sign up free</a>
+    </div>
   </div>
 </section>
 
@@ -686,7 +755,7 @@
     </div>
 
     <!-- categories -->
-    <h3 class="strat-subhead" data-reveal>The categories</h3>
+    <h3 class="strat-subhead center" data-reveal>The categories</h3>
     <ul class="strat-chips" data-reveal>
       <li>Corporate strategy</li>
       <li>Future market</li>
@@ -711,6 +780,57 @@
       <li>Reputation</li>
       <li>Customer experience</li>
     </ul>
+
+    <!-- Mobile: the categories grouped into 5 buckets -->
+    <div class="bucket-accordion cats-accordion" aria-label="Research categories, grouped by bucket">
+      <details class="bucket" name="cats" open>
+        <summary><span class="bucket-label">Strategy and direction</span><span class="bucket-count">6</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows bucket-chips">
+          <li>Corporate strategy</li>
+          <li>Future market</li>
+          <li>Strategic priorities</li>
+          <li>Deals and partnerships</li>
+          <li>Operational readiness</li>
+          <li>Talent and hiring</li>
+        </ul>
+      </details>
+      <details class="bucket" name="cats">
+        <summary><span class="bucket-label">Market and competition</span><span class="bucket-count">5</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows bucket-chips">
+          <li>Competitive threats</li>
+          <li>White space</li>
+          <li>Brand positioning</li>
+          <li>Thought leadership</li>
+          <li>Ecosystem and integrations</li>
+        </ul>
+      </details>
+      <details class="bucket" name="cats">
+        <summary><span class="bucket-label">Product and business</span><span class="bucket-count">5</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows bucket-chips">
+          <li>Product portfolio</li>
+          <li>Pricing and monetization</li>
+          <li>AI strategy</li>
+          <li>Financial performance</li>
+          <li>Security and compliance</li>
+        </ul>
+      </details>
+      <details class="bucket" name="cats">
+        <summary><span class="bucket-label">Go to market</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows bucket-chips">
+          <li>Go to market</li>
+          <li>Marketing impact</li>
+          <li>AI discoverability</li>
+        </ul>
+      </details>
+      <details class="bucket" name="cats">
+        <summary><span class="bucket-label">Customers and reputation</span><span class="bucket-count">3</span><svg class="bucket-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="bucket-rows bucket-chips">
+          <li>Customer retention</li>
+          <li>Reputation</li>
+          <li>Customer experience</li>
+        </ul>
+      </details>
+    </div>
 
     <!-- Top Dawg Matrix -->
     <h3 class="strat-subhead" data-reveal>The Compdawg Top Dawg Matrix</h3>
@@ -794,6 +914,11 @@
         <li><i>8</i><span class="tdm-leg-name">Legacy mobile app</span><span class="tdm-leg-quad">Cage It</span></li>
       </ul>
     </figure>
+
+    <div class="section-cta" data-reveal>
+      <p>See your own Top Dawg Matrix of opportunities</p>
+      <a class="btn btn-primary" href="https://form.typeform.com/to/XvtHPkwo" target="_blank" rel="noopener">Book a call</a>
+    </div>
 
     <!-- Sample Strategic report (embedded designer carousel) -->
     <h3 class="strat-subhead" data-reveal>See what a Strategic report looks like</h3>
@@ -979,7 +1104,8 @@
       </div>
     </div>
 
-    <div class="strat-cta" data-reveal>
+    <div class="section-cta strat-cta" data-reveal>
+      <p>Get a Strategic report on your company and your competitors</p>
       <a class="btn btn-primary" href="https://form.typeform.com/to/XvtHPkwo" target="_blank" rel="noopener">Book a call</a>
     </div>
   </div>
@@ -1118,7 +1244,7 @@
   </div>
 </footer>
 
-<script src="assets/app.js?v=20261103r5" defer></script>
-<script src="assets/sample-report.js?v=20261103r5" defer></script>
+<script src="assets/app.js?v=20261103r6" defer></script>
+<script src="assets/sample-report.js?v=20261103r6" defer></script>
 </body>
 </html>
