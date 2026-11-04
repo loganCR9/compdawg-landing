@@ -1067,3 +1067,59 @@ form[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .nav, .nav a, .hamburger span, .hamburger span::before, .hamburger span::after { transition: none; }
 }
+
+/* Plan upgrades and mobile comparison affordances */
+.plans-upgrade { margin-top: 28px; text-align: center; }
+.plans-upgrade p { color: var(--ink-soft); margin-bottom: 14px; }
+.plans-upgrade-buttons { display: flex; justify-content: center; gap: 12px; }
+.compare-swipe { display: none; }
+.compare-shell { min-width: 0; max-width: 100%; }
+
+@media (max-width: 680px) {
+  .receives { align-items: stretch; }
+  .receives ul, .strat-grade-list {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr; width: 100%; gap: 10px;
+  }
+  .receives li, .strat-grade-list li {
+    min-width: 0; min-height: 76px; height: 100%; padding: 10px;
+    justify-content: center; text-align: center; line-height: 1.35;
+    text-wrap: balance; border-radius: var(--radius);
+  }
+  .receives li { flex-direction: column; gap: 6px; }
+  .plans-upgrade-buttons { flex-direction: column; }
+  .plans-upgrade-buttons .btn { width: 100%; }
+  .compare-swipe {
+    display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+    margin-top: 28px; margin-bottom: 8px;
+    font-size: .8rem; color: var(--ink-soft); transition: opacity .2s;
+  }
+  .plans-compare-head + .compare-swipe { margin-top: 14px; }
+  .compare-swipe.is-used { opacity: 0; }
+  .compare-shell { position: relative; }
+  .compare-shell::after {
+    content: ""; position: absolute; inset: 0 0 0 auto; width: 24px;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    background: linear-gradient(to right, transparent, var(--cream-200));
+    pointer-events: none; transition: opacity .2s;
+  }
+  .compare-shell.is-at-end::after { opacity: 0; }
+  .compare-shell .compare-wrap { margin-top: 0; width: 100%; }
+  .compare {
+    table-layout: fixed; border-collapse: separate; border-spacing: 0;
+    min-width: 0; width: calc(40vw + 480px);
+  }
+  .plans-compare { width: calc(40vw + 360px); }
+  .compare th, .compare td { padding: 12px 10px; overflow-wrap: anywhere; }
+  .compare thead th { width: 120px; }
+  .compare .c-feature, .compare th[scope="row"] {
+    width: 40vw; min-width: 0; position: sticky; left: 0; z-index: 1;
+    background: var(--white); box-shadow: 5px 0 8px -5px var(--line-strong);
+  }
+  .compare thead .c-feature { z-index: 2; background: var(--cream-200); }
+  /* Colspan group headings remain normal table cells, outside the sticky column. */
+  .compare .rowgroup { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .compare-swipe, .compare-shell::after { transition: none; }
+}

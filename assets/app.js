@@ -109,6 +109,22 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
+  /* Comparison cues and fades follow each wrapper's own scroll position. */
+  doc.querySelectorAll(".compare-wrap").forEach(function (wrap) {
+    var shell = wrap.parentElement;
+    var cue = shell.previousElementSibling;
+    function updateCompare() {
+      shell.classList.toggle("is-at-end", wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2);
+    }
+    wrap.addEventListener("scroll", function () {
+      if (wrap.scrollLeft > 0) cue.classList.add("is-used");
+      updateCompare();
+    }, { passive: true });
+    window.addEventListener("resize", updateCompare);
+    if ("ResizeObserver" in window) new ResizeObserver(updateCompare).observe(wrap);
+    updateCompare();
+  });
+
   /* ---- FAQ: keep one open at a time (progressive enhancement) ---- */
   var faqItems = Array.prototype.slice.call(doc.querySelectorAll(".faq details"));
   faqItems.forEach(function (d) {

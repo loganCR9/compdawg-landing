@@ -255,3 +255,23 @@
   .sr-dots { grid-column: 1 / -1; grid-row: 2; justify-content: center; margin-top: -6px; }
   .sr-arrow { width: 44px; height: 44px; }
 }
+
+/* Reading guidance stays above the report and keeps its text after interaction. */
+.sr-read-cue {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 14px; margin-bottom: 10px; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--cream-200);
+  color: var(--ink-soft); font-size: .82rem; line-height: 1.35;
+}
+.sr-read-text { display: flex; align-items: center; gap: 8px; }
+.sr-read-text svg { flex: none; color: var(--orange-600); transition: opacity .2s; }
+.sr-read-cue.is-used svg { opacity: 0; }
+.sr-counter { flex: none; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.sr-mobile-cue { display: none; }
+@media (max-width: 680px) {
+  .sr-mobile-cue { display: inline; }
+  .sr-desktop-cue { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sr-read-text svg { transition: none; }
+}
