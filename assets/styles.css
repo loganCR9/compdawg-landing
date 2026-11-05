@@ -47,7 +47,10 @@
 
   --maxw: 1160px;
   --gutter: clamp(20px, 5vw, 48px);
-  --section-y: clamp(64px, 9vw, 120px);
+  --section-y: clamp(48px, 6.75vw, 90px);
+  --section-gap: clamp(24px, 3.75vw, 39px);
+  --subsection-gap: clamp(30px, 4.5vw, 48px);
+  --heading-gap: 13px;
 
   --font-display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
   --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -111,7 +114,7 @@ p { text-wrap: pretty; }
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section-y); }
 .section-head { max-width: 46rem; }
-.section-head h2 + .lead { margin-top: 18px; }
+.section-head h2 + .lead { margin-top: var(--heading-gap); }
 .lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--ink-soft); line-height: 1.5; max-width: 42rem; }
 
 .band-navy {
@@ -130,7 +133,7 @@ p { text-wrap: pretty; }
 .grain::before {
   content: "";
   position: absolute; inset: 0;
-  background-image: url("noise.svg?v=20261104r3");
+  background-image: url("noise.svg?v=20261105r1");
   background-size: 180px;
   opacity: .35;
   mix-blend-mode: overlay;
@@ -260,7 +263,7 @@ p { text-wrap: pretty; }
 .hero-grid {
   display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1.08fr);
   gap: clamp(32px, 5vw, 72px); align-items: center;
-  padding-block: clamp(48px, 7vw, 92px) var(--section-y);
+  padding-block: clamp(36px, 5.25vw, 69px) var(--section-y);
 }
 .hero h1 {
   font-size: clamp(2.35rem, 4.5vw, 3.6rem);
@@ -397,7 +400,7 @@ p { text-wrap: pretty; }
 }
 .ico svg { width: 22px; height: 22px; }
 
-.watch-grid { margin-top: clamp(32px, 5vw, 52px); }
+.watch-grid { margin-top: var(--section-gap); }
 .watch-grid .card { padding: 18px 20px; align-content: start; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 10px; align-items: center; }
 .watch-grid .ico { width: 22px; height: 22px; margin: 0; border: 0; border-radius: 0; background: none; color: var(--orange-600, #bd5a15); }
 .watch-grid .card h3 { margin: 0; }
@@ -417,7 +420,7 @@ p { text-wrap: pretty; }
 /* ==========================================================================
    How it works
    ========================================================================== */
-.steps { margin-top: clamp(32px, 5vw, 52px); counter-reset: step; }
+.steps { margin-top: var(--section-gap); counter-reset: step; }
 .step {
   position: relative; padding: 26px 24px; background: #fff;
   border: 1px solid var(--line); border-radius: var(--radius);
@@ -450,7 +453,7 @@ p { text-wrap: pretty; }
 /* ==========================================================================
    Plans
    ========================================================================== */
-.plans { margin-top: clamp(34px, 5vw, 56px); align-items: stretch; }
+.plans { margin-top: clamp(25px, 3.75vw, 42px); align-items: stretch; }
 .plan {
   min-width: 0;
   display: flex; flex-direction: column;
@@ -469,6 +472,7 @@ p { text-wrap: pretty; }
 .plan h3 { font-size: 1.35rem; }
 .plan .plan-sub { margin-top: 6px; color: var(--ink-soft); font-size: .95rem; min-height: 2.7em; }
 .plan-price { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; color: var(--ink-mute); font-size: .92rem; }
+.plan-price-prefix { flex-basis: 100%; }
 .plan-price b { font-family: var(--font-display); font-size: 2.2rem; line-height: 1; color: var(--ink); font-weight: 700; letter-spacing: -.02em; }
 .plan-list { margin: 20px 0 26px; display: grid; gap: 12px; }
 .plan-list li { display: flex; gap: 11px; align-items: flex-start; font-size: .95rem; color: var(--ink-soft); line-height: 1.45; }
@@ -495,6 +499,9 @@ p { text-wrap: pretty; }
   background: #fff; border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg); padding: clamp(24px, 3vw, 34px);
 }
+.plan-chooser { display: grid; gap: 12px; }
+.plan-chooser h3 { color: var(--ink); margin-bottom: 4px; }
+.form-card .plan-chooser .btn { margin-top: 0; }
 .field { margin-bottom: 18px; }
 .field label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 7px; color: var(--ink); }
 .field label .opt { font-weight: 500; color: var(--ink-mute); }
@@ -531,7 +538,7 @@ p { text-wrap: pretty; }
 /* ==========================================================================
    FAQ
    ========================================================================== */
-.faq { margin: clamp(28px, 4vw, 44px) auto 0; max-width: 52rem; }
+.faq { margin: clamp(21px, 3vw, 33px) auto 0; max-width: 52rem; }
 .faq details {
   border-bottom: 1px solid var(--line);
 }
@@ -554,8 +561,8 @@ p { text-wrap: pretty; }
    ========================================================================== */
 .final { text-align: center; }
 .final h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); max-width: 18ch; margin-inline: auto; }
-.final .lead { margin: 18px auto 0; color: var(--on-navy-soft); }
-.final .cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.final .lead { margin: var(--heading-gap) auto 0; color: var(--on-navy-soft); }
+.final .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
 .wordmark { display: inline-flex; align-items: center; gap: 11px; }
 .wordmark img { height: 34px; width: auto; }
@@ -683,7 +690,7 @@ form[hidden] { display: none; }
 .anchor-offset { display: block; position: relative; top: -96px; height: 0; visibility: hidden; }
 
 #watch, #how, #compare, #plans, #strategic, #free, #faq { scroll-margin-top: 88px; }
-.demo-copy h2 + .lead { margin-top: 18px; }
+.demo-copy h2 + .lead { margin-top: var(--heading-gap); }
 
 /* ==========================================================================
    Comparison table
@@ -697,7 +704,7 @@ form[hidden] { display: none; }
 }
 
 .compare-wrap {
-  margin-top: clamp(32px, 5vw, 52px);
+  margin-top: var(--section-gap);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
@@ -716,6 +723,11 @@ form[hidden] { display: none; }
   border-collapse: collapse;
   font-size: .95rem;
 }
+.products-compare { table-layout: fixed; }
+.products-compare .product-feature { width: 25%; }
+.products-compare .product-dawg { width: 21%; }
+.products-compare .product-rival { width: 18%; }
+.products-compare .c-feature, .products-compare th[scope="row"] { min-width: 0; }
 .compare th, .compare td {
   padding: 15px 18px;
   text-align: center;
@@ -785,7 +797,7 @@ form[hidden] { display: none; }
    Reuses the .compare system; Core is the highlighted (col-dawg) column.
    ========================================================================== */
 .plans-compare-head {
-  margin-top: clamp(40px, 6vw, 64px);
+  margin-top: var(--subsection-gap);
   font-size: 1.3rem;
 }
 .plans-compare-wrap { margin-top: 18px; }
@@ -820,7 +832,7 @@ form[hidden] { display: none; }
 /* ==========================================================================
    Strategic section
    ========================================================================== */
-.strat-stages { margin-top: clamp(32px, 5vw, 52px); gap: 20px; }
+.strat-stages { margin-top: var(--section-gap); gap: 20px; }
 .strat-stage {
   position: relative;
   background: #fff; border: 1px solid var(--line);
@@ -837,7 +849,7 @@ form[hidden] { display: none; }
 .strat-stage li { display: flex; gap: 11px; align-items: flex-start; font-size: .95rem; color: var(--ink-soft); line-height: 1.45; }
 .strat-stage li svg { flex: none; margin-top: 3px; color: var(--orange); }
 
-.strat-subhead { margin-top: clamp(40px, 6vw, 64px); font-size: 1.3rem; }
+.strat-subhead { margin-top: var(--subsection-gap); font-size: 1.3rem; }
 
 /* Desktop: centered, ordered pill grid (3 cols >=1024, 2 cols 768-1023) */
 .strat-subhead.center { text-align: center; }
@@ -895,7 +907,7 @@ form[hidden] { display: none; }
 @media (max-width: 520px) { .strat-agame { grid-template-columns: minmax(0,1fr); } }
 
 .strat-grade {
-  margin-top: clamp(40px, 6vw, 64px);
+  margin-top: var(--subsection-gap);
   background: var(--navy-800); color: var(--on-navy);
   border-radius: var(--radius-lg);
   padding: clamp(26px, 3.4vw, 38px);
@@ -950,9 +962,9 @@ form[hidden] { display: none; }
   color: #975014; flex: none; min-width: 1.7em;
 }
 
-.strat-matrix-lead { margin-top: 14px; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; max-width: 52rem; }
+.strat-matrix-lead { margin-top: 10px; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; max-width: 52rem; }
 .strat-matrix {
-  margin-top: 24px; max-width: 680px; margin-inline: auto;
+  margin-top: 18px; max-width: 680px; margin-inline: auto;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg); padding: clamp(18px, 2.5vw, 28px);
 }
@@ -979,7 +991,7 @@ form[hidden] { display: none; }
 .tdm-leg-quad { margin-left: auto; color: var(--ink-mute); font-size: .8rem; white-space: nowrap; }
 @media (max-width: 560px) { .tdm-legend { grid-template-columns: minmax(0,1fr); } }
 
-.strat-cta { margin-top: clamp(32px, 5vw, 48px); }
+.strat-cta { margin-top: clamp(24px, 3.75vw, 36px); }
 @media (max-width: 560px) { .strat-cta .btn { width: 100%; } }
 
 /* buttons wrap their label on phones instead of pushing the page wider */
@@ -991,7 +1003,7 @@ form[hidden] { display: none; }
    Section CTA bands (between sections, and inside Strategic)
    ========================================================================== */
 .section-cta {
-  margin-top: clamp(32px, 5vw, 52px);
+  margin-top: var(--section-gap);
   display: flex; flex-direction: column; align-items: center; gap: 16px;
   text-align: center;
 }
@@ -1000,7 +1012,7 @@ form[hidden] { display: none; }
   font-size: clamp(1.25rem, 2.4vw, 1.7rem); letter-spacing: -0.02em;
   line-height: 1.1; color: var(--ink); max-width: 24ch;
 }
-.strat-cta { margin-top: clamp(32px, 5vw, 48px); }
+.strat-cta { margin-top: clamp(24px, 3.75vw, 36px); }
 @media (max-width: 560px) { .section-cta .btn { width: 100%; } }
 
 /* ==========================================================================
@@ -1008,7 +1020,7 @@ form[hidden] { display: none; }
    Hidden on desktop; the desktop grids stay the single source of truth there.
    Native <details name> gives exclusive open and works with no JS.
    ========================================================================== */
-.bucket-accordion { display: none; margin-top: clamp(28px, 5vw, 44px); }
+.bucket-accordion { display: none; margin-top: clamp(21px, 3.75vw, 33px); }
 
 .bucket {
   background: #fff; border: 1px solid var(--line-strong);
@@ -1070,7 +1082,7 @@ form[hidden] { display: none; }
 }
 
 /* Plan upgrades and mobile comparison affordances */
-.plans-upgrade { margin-top: 28px; text-align: center; }
+.plans-upgrade { margin-top: 21px; text-align: center; }
 .plans-upgrade p { color: var(--ink-soft); margin-bottom: 14px; }
 .plans-upgrade-buttons { display: flex; justify-content: center; gap: 12px; }
 .compare-swipe { display: none; }
@@ -1092,7 +1104,7 @@ form[hidden] { display: none; }
   .plans-upgrade-buttons .btn { width: 100%; }
   .compare-swipe {
     display: flex; align-items: center; justify-content: flex-end; gap: 8px;
-    margin-top: 28px; margin-bottom: 8px;
+    margin-top: 21px; margin-bottom: 8px;
     font-size: .8rem; color: var(--ink-soft); transition: opacity .2s;
   }
   .plans-compare-head + .compare-swipe { margin-top: 14px; }
@@ -1111,6 +1123,8 @@ form[hidden] { display: none; }
     min-width: 0; width: calc(40vw + 480px);
   }
   .plans-compare { width: calc(40vw + 360px); }
+  .products-compare .product-feature { width: 40vw; }
+  .products-compare .product-dawg, .products-compare .product-rival { width: 120px; }
   .compare th, .compare td { padding: 12px 10px; overflow-wrap: anywhere; }
   .compare thead th { width: 120px; }
   .compare .c-feature, .compare th[scope="row"] {

@@ -7,7 +7,7 @@
    ========================================================================== */
 
 /* ---------- embed shell ---------- */
-.sr-embed { margin-top: clamp(24px, 4vw, 36px); overflow-x: clip; }
+.sr-embed { margin-top: clamp(18px, 3vw, 27px); overflow-x: clip; }
 
 .sr-carousel { margin-top: 2px; }
 .sr-track {
@@ -40,6 +40,22 @@
 .sr-ph h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.12; }
 .sr-who { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 600; color: var(--ink-soft); text-align: right; }
 .sr-card.sr-dark .sr-who { color: var(--on-navy-soft); }
+
+/* ---------- A-Game answers ---------- */
+.sr-agame-intro { margin-bottom: 14px; color: var(--ink-mute); font-size: .9rem; }
+.sr-agame-answers { display: grid; }
+.sr-agame-answers > div {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 24px; padding: 14px 0; border-top: 1px dashed var(--line-strong);
+}
+.sr-agame-answers dt { font-weight: 600; color: var(--ink); line-height: 1.4; font-size: .95rem; }
+.sr-agame-answers dt span { color: #975014; }
+.sr-agame-answers dd { color: var(--ink-soft); font-size: .93rem; line-height: 1.45; }
+@media (max-width: 680px) {
+  .sr-agame-answers > div { grid-template-columns: minmax(0, 1fr); gap: 5px; padding: 11px 0; }
+  .sr-agame-answers dt { font-size: .88rem; }
+  .sr-agame-answers dd { font-size: .86rem; }
+}
 
 /* ---------- 01 assessment ---------- */
 .sr-p1-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; margin-top: 8px; }
