@@ -13,7 +13,8 @@ const signupJs = readFileSync(new URL("../assets/signup.js", import.meta.url), "
 test("paid prices are flat monthly amounts and free stays free", () => {
   assert.match(html, /<b>\$2,000<\/b><span>per month<\/span>/);
   assert.match(html, /<b>\$5,000<\/b><span>per month<\/span>/);
-  assert.match(html, /From \$2,000 per month/);
+  assert.match(html, /Core \$2,000\/month and Strategic \$5,000\/month/);
+  assert.doesNotMatch(html, /From \$/);
   assert.match(html, /for \$2,000 per month/);
   assert.match(html, /Core costs \$2,000 per month/);
   assert.match(html, /for \$5,000 per month/);
