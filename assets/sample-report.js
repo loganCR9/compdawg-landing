@@ -1,4 +1,4 @@
-/* Compdawg landing — embedded sample Strategic report carousel.
+/* Compdawg landing: embedded sample Strategic report carousel.
    Ported from the designer's carousel-v3.js, namespaced ids/classes.
    Keyboard, aria, and reduced-motion friendly. No external deps. */
 (function () {

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Compdawg landing — embedded sample Strategic report (carousel)
+   Compdawg landing: embedded sample Strategic report (carousel)
    Ported from the Graphic Designer's v3 (report-v3.css, report-v2.css,
    report.css). All classes namespaced with .sr- so nothing collides with
    styles.css. Brand tokens (--navy-*, --orange, --cream, --ink-*, fonts)
@@ -95,8 +95,6 @@
 .sr-find .sr-ev { padding-top: 10px; border-top: 1px dashed var(--line-strong); }
 .sr-find .sr-act { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--ink); font-weight: 500; margin-top: auto; }
 .sr-find .sr-act b { color: #975014; }
-.sr-cats { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px; }
-.sr-cats li { font-size: .72rem; color: var(--ink-soft); line-height: 1.2; background: var(--cream); border: 1px solid var(--line); border-radius: 99px; padding: 3px 9px; }
 
 /* ---------- 04 comparative analysis ---------- */
 .sr-cmp { --sr-cols: minmax(0, 2.6fr) repeat(4, minmax(0, 1fr)) 8rem; font-size: .95rem; margin-top: 2px; }
@@ -216,8 +214,6 @@
   .sr-find { padding: 14px; gap: 8px; }
   .sr-find .sr-ev { padding-top: 8px; }
   .sr-find p { font-size: .84rem; }
-  .sr-cats { margin-top: 14px; padding-top: 12px; }
-  .sr-cats li { font-size: .7rem; padding: 3px 8px; }
   .sr-cmp-head { display: none; }
   .sr-cmp-row { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 12px; padding: 16px 0; }
   .sr-cmp-row .sr-cat { grid-column: 1 / 4; grid-row: 1; font-size: .88rem; }
@@ -274,4 +270,11 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .sr-read-text svg { transition: none; }
+}
+
+@media (max-width: 680px) {
+  .sr-read-cue { display: grid; grid-template-columns: 1fr auto; }
+  .sr-read-cue > .example-badge { justify-self: start; }
+  .sr-read-text { grid-column: 1 / -1; grid-row: 2; }
+  .sr-counter { grid-column: 2; grid-row: 1; }
 }

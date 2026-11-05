@@ -1,4 +1,4 @@
-/* Compdawg landing — small vanilla JS. No dependencies, no build step. */
+/* Compdawg landing: small vanilla JS. No dependencies, no build step. */
 (function () {
   "use strict";
   var doc = document;
