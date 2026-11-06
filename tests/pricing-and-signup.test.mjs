@@ -37,6 +37,10 @@ test("signup controls open the dialog and strategic calls stay on their links", 
     assert.match(line, /https:\/\/form\.typeform\.com\/to\/XvtHPkwo/);
   });
   assert.match(html, /id="signup-dialog"/);
+  assert.match(html, /<h2 id="signup-title">Track your top competitor<\/h2>/);
+  assert.match(html, /<p class="signup-lead" id="signup-lead">Free for life, no card needed<\/p>/);
+  assert.doesNotMatch(html, /Create your free account/);
+  assert.doesNotMatch(html, /Track your top competitor\. Free for life, no card needed\./);
   assert.match(html, /Work email/);
   assert.match(html, /Password \(at least 12 characters\)/);
   assert.match(html, /Create account/);
