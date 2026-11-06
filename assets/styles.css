@@ -47,7 +47,7 @@
 
   --maxw: 1160px;
   --gutter: clamp(20px, 5vw, 48px);
-  --section-y: clamp(48px, 6.75vw, 90px);
+  --section-y: clamp(64px, 4.8vw, 72px);
   --section-gap: clamp(24px, 3.75vw, 39px);
   --subsection-gap: clamp(30px, 4.5vw, 48px);
   --heading-gap: 13px;
@@ -112,7 +112,11 @@ p { text-wrap: pretty; }
 
 /* ---------- Layout ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
-.section { padding-block: var(--section-y); }
+/* One transition rhythm. The previous section's bottom and the next section's top are shares of the same value, so neighboring bands do not stack two full paddings. */
+.section {
+  padding-top: calc(var(--section-y) * 0.58);
+  padding-bottom: calc(var(--section-y) * 0.42);
+}
 .section-head { max-width: 46rem; }
 .section-head h2 + .lead { margin-top: var(--heading-gap); }
 .lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--ink-soft); line-height: 1.5; max-width: 42rem; }
@@ -263,7 +267,7 @@ p { text-wrap: pretty; }
 .hero-grid {
   display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1.08fr);
   gap: clamp(32px, 5vw, 72px); align-items: center;
-  padding-block: clamp(36px, 5.25vw, 69px) var(--section-y);
+  padding-block: clamp(36px, 5.25vw, 69px) calc(var(--section-y) * 0.42);
 }
 .hero h1 {
   font-size: clamp(2.35rem, 4.5vw, 3.6rem);
@@ -472,7 +476,6 @@ p { text-wrap: pretty; }
 .plan h3 { font-size: 1.35rem; }
 .plan .plan-sub { margin-top: 6px; color: var(--ink-soft); font-size: .95rem; min-height: 2.7em; }
 .plan-price { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; color: var(--ink-mute); font-size: .92rem; }
-.plan-price-prefix { flex-basis: 100%; }
 .plan-price b { font-family: var(--font-display); font-size: 2.2rem; line-height: 1; color: var(--ink); font-weight: 700; letter-spacing: -.02em; }
 .plan-list { margin: 20px 0 26px; display: grid; gap: 12px; }
 .plan-list li { display: flex; gap: 11px; align-items: flex-start; font-size: .95rem; color: var(--ink-soft); line-height: 1.45; }
@@ -1150,4 +1153,80 @@ form[hidden] { display: none; }
 .matrix-example { display: flex; justify-content: flex-end; padding-bottom: 8px; }
 @media (max-width: 680px) {
   .receives li:last-child { grid-column: 1 / -1; }
+}
+
+/* Signup dialog. Uses the landing type, color, and buttons. */
+.signup-dialog {
+  width: min(420px, calc(100vw - 24px));
+  max-height: min(640px, calc(100dvh - 24px));
+  margin: auto;
+  padding: 22px 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.signup-dialog::backdrop { background: rgba(8, 20, 35, .62); }
+.signup-dialog h2 {
+  margin-top: 16px;
+  font-size: clamp(1.45rem, 5vw, 1.75rem);
+  letter-spacing: -.03em;
+}
+.signup-lead { margin-top: 8px; color: var(--ink-soft); font-size: .98rem; }
+.signup-logo { width: 138px; height: auto; }
+.signup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink-soft);
+}
+.signup-close:hover { background: var(--cream-200); color: var(--ink); }
+.signup-form { display: grid; gap: 12px; margin-top: 18px; }
+.signup-field { display: grid; gap: 6px; color: var(--ink-soft); font-size: .92rem; font-weight: 600; }
+.signup-field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+.signup-field input:focus { border-color: var(--orange); outline: none; }
+.signup-field input[aria-invalid="true"] { border-color: #9c3418; }
+.signup-error {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(156, 52, 24, .28);
+  border-radius: var(--radius-sm);
+  background: #fde8df;
+  color: #7a2a14;
+  font-size: .92rem;
+  font-weight: 600;
+}
+.signup-dialog .btn:disabled { opacity: .55; cursor: not-allowed; }
+.signup-switch { margin-top: 14px; color: var(--ink-soft); font-size: .95rem; }
+@media (max-width: 400px) {
+  .signup-dialog {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+    padding: 16px 14px 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signup-dialog, .signup-close { transition: none; }
 }

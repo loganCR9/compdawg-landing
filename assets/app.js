@@ -134,4 +134,153 @@
       }
     });
   });
+
+  /* Signup stays on this page until the app accepts the account. */
+  var signupApi = window.CompdawgSignup;
+  var signupDialog = doc.getElementById("signup-dialog");
+  var signupForm = doc.getElementById("signup-form");
+  var signupEmail = doc.getElementById("signup-email");
+  var signupPassword = doc.getElementById("signup-password");
+  var signupError = doc.getElementById("signup-error");
+  var signupSubmit = doc.getElementById("signup-submit");
+  var signupClose = doc.getElementById("signup-close");
+  var signupLastFocus = null;
+  var signupPending = false;
+  var signupLocked = false;
+  var signupOldOverflow = "";
+  var signupOldPadding = "";
+  var signupLockY = 0;
+
+  function signupFields() {
+    return {
+      email: signupEmail,
+      password: signupPassword
+    };
+  }
+
+  function clearSignupError() {
+    if (!signupError) return;
+    signupError.hidden = true;
+    signupError.textContent = "";
+    Object.keys(signupFields()).forEach(function (key) {
+      signupFields()[key].removeAttribute("aria-invalid");
+      signupFields()[key].removeAttribute("aria-describedby");
+    });
+  }
+
+  function showSignupError(message, fields) {
+    signupError.hidden = false;
+    signupError.textContent = message;
+    var marked = {};
+    (fields || []).forEach(function (name) { marked[name] = true; });
+    Object.keys(signupFields()).forEach(function (key) {
+      var input = signupFields()[key];
+      var invalid = !!marked[key];
+      input.setAttribute("aria-invalid", invalid ? "true" : "false");
+      if (invalid) input.setAttribute("aria-describedby", "signup-error");
+      else input.removeAttribute("aria-describedby");
+    });
+    var first = (fields || [])[0];
+    if (first && signupFields()[first]) signupFields()[first].focus({ preventScroll: true });
+  }
+
+  function lockSignupScroll() {
+    if (signupLocked) return;
+    signupLocked = true;
+    signupLockY = window.scrollY;
+    signupOldOverflow = root.style.overflow;
+    signupOldPadding = doc.body.style.paddingRight;
+    var scrollbar = window.innerWidth - root.clientWidth;
+    if (scrollbar) doc.body.style.paddingRight = (parseFloat(getComputedStyle(doc.body).paddingRight) + scrollbar) + "px";
+    root.style.overflow = "hidden";
+  }
+
+  function unlockSignupScroll() {
+    if (!signupLocked) return;
+    signupLocked = false;
+    root.style.overflow = signupOldOverflow;
+    doc.body.style.paddingRight = signupOldPadding;
+    window.scrollTo({ top: signupLockY, behavior: "instant" });
+  }
+
+  function restoreSignupFocus() {
+    var back = signupLastFocus;
+    signupLastFocus = null;
+    var inMenu = !!(back && menu && menu.contains(back));
+    var target = !inMenu && back && typeof back.focus === "function" && doc.contains(back) ? back : burger;
+    if (target && typeof target.focus === "function") target.focus({ preventScroll: true });
+  }
+
+  function closeSignup() {
+    if (!signupDialog || !signupDialog.open) return;
+    signupDialog.close();
+  }
+
+  function openSignup(trigger) {
+    if (!signupApi || !signupDialog || typeof signupDialog.showModal !== "function") {
+      if (trigger && trigger.href) window.location.assign(trigger.href);
+      return;
+    }
+    setMenu(false);
+    signupLastFocus = trigger && typeof trigger.focus === "function" ? trigger : doc.activeElement;
+    if (!signupPending) {
+      signupForm.reset();
+      signupSubmit.disabled = false;
+      signupSubmit.textContent = "Create account";
+      clearSignupError();
+    }
+    if (!signupDialog.open) signupDialog.showModal();
+    lockSignupScroll();
+    if (!signupPending) signupEmail.focus({ preventScroll: true });
+  }
+
+  if (signupDialog && signupForm && signupApi) {
+    signupDialog.addEventListener("close", function () {
+      unlockSignupScroll();
+      signupForm.reset();
+      clearSignupError();
+      if (!signupPending) {
+        signupSubmit.disabled = false;
+        signupSubmit.textContent = "Create account";
+      }
+      restoreSignupFocus();
+    });
+    signupDialog.addEventListener("click", function (e) {
+      if (e.target !== signupDialog) return;
+      var rect = signupDialog.getBoundingClientRect();
+      var inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (!inside) closeSignup();
+    });
+    if (signupClose) signupClose.addEventListener("click", closeSignup);
+    signupForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (signupPending) return;
+      signupPending = true;
+      signupSubmit.disabled = true;
+      signupSubmit.textContent = "Creating account";
+      clearSignupError();
+      signupApi.submitSignup({
+        email: signupEmail.value,
+        password: signupPassword.value
+      }, window.fetch.bind(window)).then(function (result) {
+        signupPending = false;
+        if (result.ok) {
+          window.location.assign(result.welcomeUrl);
+          return;
+        }
+        if (!signupDialog.open) return;
+        signupSubmit.disabled = false;
+        signupSubmit.textContent = "Create account";
+        showSignupError(result.message, result.fields);
+      });
+    });
+    doc.addEventListener("click", function (e) {
+      var link = e.target && e.target.closest ? e.target.closest("a[data-signup-open]") : null;
+      if (!link) return;
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      e.stopPropagation();
+      openSignup(link);
+    });
+  }
 })();
