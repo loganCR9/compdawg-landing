@@ -1,0 +1,4 @@
+{
+  "_doc": "Exact intentional strings to exempt from the copy check (brand names, approved copy). Each entry: { file, rule, match, reason }. 'file' is a repo-relative path or '*'. 'rule' is the rule id (word, copulative, phrase, deadTransition, engagementBait, hype, oxford, emDash) or '*'. 'match' is the exact matched text (case-insensitive). A finding is suppressed when file, rule, and match all match an entry. 'line' is optional for extra precision.",
+  "allow": []
+}

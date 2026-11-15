@@ -28,6 +28,9 @@ jobs:
           node --check assets/sample-report.js
           node --check functions/_middleware.js
 
+      - name: Copy check
+        run: node scripts/copy-check.mjs
+
       - name: Pricing and signup tests
         run: node --test tests/pricing-and-signup.test.mjs
 
