@@ -1,0 +1,50 @@
+{
+  "_source": "Derived from Logan's copy-blacklist SKILL.md (sections 8A-8E). Keep in sync with that house standard. Words are matched as whole words, case-insensitive, with simple inflections. Phrases are matched literally, case-insensitive.",
+  "words": [
+    "delve", "realm", "harness", "unlock", "tapestry", "paradigm",
+    "revolutionize", "landscape", "intricate", "intricacies", "showcasing",
+    "crucial", "pivotal", "surpass", "meticulously", "vibrant", "unparalleled",
+    "underscore", "leverage", "synergy", "innovative", "testament", "commendable",
+    "meticulous", "highlight", "emphasize", "boast", "groundbreaking", "align",
+    "foster", "showcase", "enhance", "holistic", "garner", "accentuate",
+    "pioneering", "trailblazing", "unleash", "versatile", "transformative",
+    "redefine", "seamless", "optimize", "scalable", "robust", "breakthrough",
+    "empower", "streamline", "frictionless", "elevate", "adaptive", "effortless",
+    "insightful", "proactive", "visionary", "disruptive", "reimagine",
+    "unprecedented", "intuitive", "synergize", "democratize", "accelerate",
+    "dynamic", "immersive", "predictive", "transparent", "proprietary",
+    "integrated", "supercharge", "enduring", "interplay", "valuable", "captivate",
+    "turnkey", "cutting-edge", "game-changer", "data-driven", "mission-critical",
+    "leading-edge", "state-of-the-art", "plug-and-play", "future-proof",
+    "paradigm-shifting"
+  ],
+  "copulatives": [
+    "serves as", "stands as", "marks a", "represents a", "boasts a",
+    "features a", "offers a"
+  ],
+  "phrases": [
+    "in today's", "it's important to note that", "it's worth noting",
+    "in order to", "i'd be happy to help", "straightforward", "let's dive in",
+    "let's explore", "let's unpack", "delve into", "at the end of the day",
+    "moving forward", "to put this in perspective",
+    "what makes this particularly interesting is", "the implications here are",
+    "in other words", "it goes without saying",
+    "here's the part nobody's talking about", "what nobody tells you",
+    "most people don't realize", "in this article, i will",
+    "challenges and future prospects"
+  ],
+  "deadTransitions": [
+    "furthermore", "additionally", "moreover", "that said", "that being said",
+    "with that in mind", "it is also worth mentioning", "on top of that"
+  ],
+  "engagementBait": [
+    "let that sink in", "read that again", "full stop", "this changes everything",
+    "are you paying attention?", "you're not ready for this"
+  ],
+  "hype": [
+    "supercharge", "unlock", "future-proof", "game-changer", "cutting-edge"
+  ],
+  "hypePatterns": [
+    "10x your"
+  ]
+}
